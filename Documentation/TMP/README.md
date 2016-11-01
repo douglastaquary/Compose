@@ -1,4 +1,5 @@
 # Compose
+[![Version](https://img.shields.io/cocoapods/v/Compose.svg?style=flat)](http://cocoapods.org/pods/Compose)
 
 Compose is a data driven library that will help compose your complex and dynamic Views.
 
@@ -7,6 +8,13 @@ We built Compose so we could easy manage and A/B test our complex views.
 
 That instead of dealing with many dataSources and delegates methods, we could focus on delivering shine and new components. Instead of switching `indexPaths` we could change each component position as we wished.
 
+## ComposingUnit
+The protocol [ComposingUnit](https://vivareal.github.io/Compose/Protocols/ComposingUnit.html) is at the center of this library. Any class or struct can conform to it, and it has few properties and methods that needs to be implemented. It should store all data that will be presented by this unit. 
+
+A unit also is responsible for selecting which UIView will render it's data, and once an UIView is dequeued from a container, it is also the unit job to bind that data to the view.
+
+## ComposingContainer
+A ComposingContainer is an UIView that knows how do display an array of `ComposingUnit`s. We provide two containers in the framework: `ComposingCollectionView` and `ComposingTableView`. Both have **automatic** detection of inserts/updates/deletes of ComposingUnits they are displaying.
 
 ## Example
 

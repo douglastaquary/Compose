@@ -176,12 +176,22 @@
             
             <a href='#compose' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='compose'>Compose</h1>
 
+<p><a href="http://cocoapods.org/pods/Compose"><img src="https://img.shields.io/cocoapods/v/Compose.svg?style=flat" alt="Version"></a></p>
+
 <p>Compose is a data driven library that will help compose your complex and dynamic Views.</p>
 <a href='#motivation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='motivation'>Motivation</h2>
 
 <p>We built Compose so we could easy manage and A/B test our complex views.</p>
 
 <p>That instead of dealing with many dataSources and delegates methods, we could focus on delivering shine and new components. Instead of switching <code>indexPaths</code> we could change each component position as we wished.</p>
+<a href='#composingunit' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='composingunit'>ComposingUnit</h2>
+
+<p>The protocol <a href="https://vivareal.github.io/Compose/Protocols/ComposingUnit.html">ComposingUnit</a> is at the center of this library. Any class or struct can conform to it, and it has few properties and methods that needs to be implemented. It should store all data that will be presented by this unit. </p>
+
+<p>A unit also is responsible for selecting which UIView will render it&rsquo;s data, and once an UIView is dequeued from a container, it is also the unit job to bind that data to the view.</p>
+<a href='#composingcontainer' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='composingcontainer'>ComposingContainer</h2>
+
+<p>A ComposingContainer is an UIView that knows how do display an array of <code>ComposingUnit</code>s. We provide two containers in the framework: <code>ComposingCollectionView</code> and <code>ComposingTableView</code>. Both have <strong>automatic</strong> detection of inserts/updates/deletes of ComposingUnits they are displaying.</p>
 <a href='#example' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='example'>Example</h2>
 
 <p>So, for you to get an example, after creating some units we could easly <strong>compose</strong> our view like this:</p>
