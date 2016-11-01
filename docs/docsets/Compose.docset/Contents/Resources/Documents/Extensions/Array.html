@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>Array Extension Reference</title>
+    <link rel='stylesheet' type='text/css' href='../css/jazzy.css' />
+    <link rel='stylesheet' type='text/css' href='../css/highlight.css' />
+    <meta charset='utf-8'>
+    <script src='../js/jquery.min.js' defer></script>
+    <script src='../js/jazzy.js' defer></script>
+  </head>
+  <body>
+
+    <a name='//apple_ref/swift/Extension/Array' class='dashAnchor'></a>
+
+    <a title='Array Extension Reference'></a>
+
+    <header class='header'>
+      <p class='header-col header-col--primary'>
+        <a class='header-link' href='../index.html'>
+          Compose Docs
+        </a>
+         (92% documented)
+      </p>
+    
+        <p class='header-col header-col--secondary'>
+          <a class='header-link' href='http://github.com/vivalreal/Compose'>
+            <img class='header-icon' src='../img/gh.png'/>
+            View on GitHub
+          </a>
+        </p>
+    
+    </header>
+
+    <p class='breadcrumbs'>
+      <a class='breadcrumb' href='../index.html'>Compose Reference</a>
+      <img class='carat' src='../img/carat.png' />
+      Array Extension Reference
+    </p>
+
+    <div class='content-wrapper'>
+      <nav class='navigation'>
+        <ul class='nav-groups'>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='../Guides.html'>Guides</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../introduction.html'>Introduction</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../composingunit-api.html'>ComposingUnit API</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../building-ui.html'>Building UI</a>
+              </li>
+            </ul>
+          </li>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='../Composing Unit.html'>Composing Unit</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Protocols/ComposingUnit.html'>ComposingUnit</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Structs/DimensionUnit.html'>DimensionUnit</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Protocols/TypedUnit.html'>TypedUnit</a>
+              </li>
+            </ul>
+          </li>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='../Container.html'>Container</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Protocols/ComposingContainer.html'>ComposingContainer</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Enums/ComposingContainerDirection.html'>ComposingContainerDirection</a>
+              </li>
+            </ul>
+          </li>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='../Collections.html'>Collections</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/CollectionStackView.html'>CollectionStackView</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/ComposingCollectionView.html'>ComposingCollectionView</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/ComposingUnitCollectionViewCell.html'>ComposingUnitCollectionViewCell</a>
+              </li>
+            </ul>
+          </li>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='../Table.html'>Table</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TableStackView.html'>TableStackView</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/ComposingTableView.html'>ComposingTableView</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/ComposingUnitTableViewCell.html'>ComposingUnitTableViewCell</a>
+              </li>
+            </ul>
+          </li>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='../Extending Units.html'>Extending Units</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Protocols/SelectableUnit.html'>SelectableUnit</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Protocols/TwoStepDisplayUnit.html'>TwoStepDisplayUnit</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Protocols/HighlightableUnit.html'>HighlightableUnit</a>
+              </li>
+            </ul>
+          </li>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='../ViewUnit.html'>ViewUnit</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Structs/ViewUnit.html'>ViewUnit</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Enums/ViewTraits.html'>ViewTraits</a>
+              </li>
+            </ul>
+          </li>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='../Conditional Array.html'>Conditional Array</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Extensions/Array.html'>Array</a>
+              </li>
+            </ul>
+          </li>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='../UIKit Extensions.html'>UIKit Extensions</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Extensions/UICollectionViewCell.html'>UICollectionViewCell</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Extensions/UITableViewCell.html'>UITableViewCell</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Extensions/UIEdgeInsets.html'>UIEdgeInsets</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Extensions/UIView.html'>UIView</a>
+              </li>
+            </ul>
+          </li>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='../Sample Units.html'>Sample Units</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Structs/CollectionStackUnit.html'>CollectionStackUnit</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Structs/LabelUnit.html'>LabelUnit</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class='main-content'>
+
+        <section class='section'>
+          <div class='section-content'>
+            <h1>Array</h1>
+              <div class='declaration'>
+                <div class='language'>
+                  <pre class="highlight"><code><span class="kd">struct</span> <span class="kt">Array</span><span class="o">&lt;</span><span class="kt">Element</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt">RandomAccessCollection</span><span class="p">,</span> <span class="kt">MutableCollection</span></code></pre>
+
+                </div>
+              </div>
+            
+          </div>
+        </section>
+
+        <section class='section'>
+          <div class='section-content'>
+            <div class="task-group">
+              <ul class='item-container'>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/s:FE7ComposeSa3addFT2ifKT_Sb4itemFT_x_T_"></a>
+                    <a name="//apple_ref/swift/Method/add(if:item:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FE7ComposeSa3addFT2ifKT_Sb4itemFT_x_T_">add(if:item:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Check if the condition is true, generate the item and insert it</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h5>Declaration</h5>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">add</span><span class="p">(</span><span class="k">if</span> <span class="nv">condition</span><span class="p">:</span><span class="kd">@autoclosure</span> <span class="p">()</span><span class="o">-&gt;</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">item</span><span class="p">:(()</span><span class="o">-&gt;</span> <span class="kt">Element</span><span class="p">))</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h5>Parameters</h5>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>condition</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>condition to test</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>item</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>a closure to generate the item to insert</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/s:FE7ComposeSa3addurFT5ifLetKT_GSqqd___4itemFqd__x_T_"></a>
+                    <a name="//apple_ref/swift/Method/add(ifLet:item:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FE7ComposeSa3addurFT5ifLetKT_GSqqd___4itemFqd__x_T_">add(ifLet:item:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Check if the condition is not nil and unwrap it, passing the value to the closure to generate the item</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h5>Declaration</h5>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">mutating</span> <span class="kd">func</span> <span class="n">add</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ifLet</span> <span class="nv">condition</span><span class="p">:</span><span class="kd">@autoclosure</span> <span class="p">()</span><span class="o">-&gt;</span> <span class="kt">T</span><span class="p">?,</span> <span class="nv">item</span><span class="p">:((</span><span class="kt">T</span><span class="p">)</span><span class="o">-&gt;</span> <span class="kt">Element</span><span class="p">))</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h5>Parameters</h5>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>condition</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>a closure that returns an optional</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>item</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the closure that will use the unwrapped value to generate the item</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/s:FE7ComposeSa3addurFT5ifLetKT_GSqqd___4itemFqd__x8elseItemFT_x_T_"></a>
+                    <a name="//apple_ref/swift/Method/add(ifLet:item:elseItem:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FE7ComposeSa3addurFT5ifLetKT_GSqqd___4itemFqd__x8elseItemFT_x_T_">add(ifLet:item:elseItem:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Check if the condition is not nil and unwrap it, passing the value to the closure to generate the item. If the value is nill use the else block to generate an item</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h5>Declaration</h5>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">mutating</span> <span class="kd">func</span> <span class="n">add</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">ifLet</span> <span class="nv">condition</span><span class="p">:</span><span class="kd">@autoclosure</span> <span class="p">()</span><span class="o">-&gt;</span> <span class="kt">T</span><span class="p">?,</span> <span class="nv">item</span><span class="p">:((</span><span class="kt">T</span><span class="p">)</span><span class="o">-&gt;</span> <span class="kt">Element</span><span class="p">),</span> <span class="nv">elseItem</span><span class="p">:(()</span><span class="o">-&gt;</span> <span class="kt">Element</span><span class="p">))</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h5>Parameters</h5>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>condition</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>a closure that returns an optional</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>item</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the closure that will use the unwrapped value to generate the item</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>elseItem</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>a closure that receives no value and generate an item to add to the collection</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/s:FE7ComposeSa3addFT4manyFT_GSax__T_"></a>
+                    <a name="//apple_ref/swift/Method/add(many:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FE7ComposeSa3addFT4manyFT_GSax__T_">add(many:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Add many items from the closure to the array</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h5>Declaration</h5>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">add</span><span class="p">(</span><span class="n">many</span> <span class="nv">items</span><span class="p">:(()</span><span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Element</span><span class="p">]))</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h5>Parameters</h5>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>items</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the closure that will generate the items</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/s:FE7ComposeSa3addFT6manyIfKT_Sb5itemsFT_GSax__T_"></a>
+                    <a name="//apple_ref/swift/Method/add(manyIf:items:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FE7ComposeSa3addFT6manyIfKT_Sb5itemsFT_GSax__T_">add(manyIf:items:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>check if the condition is true and than invokes the closure to generate and add the items</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h5>Declaration</h5>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">add</span><span class="p">(</span><span class="n">manyIf</span> <span class="nv">condition</span><span class="p">:</span><span class="kd">@autoclosure</span> <span class="p">()</span><span class="o">-&gt;</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">items</span><span class="p">:(()</span><span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Element</span><span class="p">]))</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h5>Parameters</h5>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>condition</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>condition to check</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>items</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the closure that will generate the items</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/s:FE7ComposeSa3addurFT9manyIfLetKT_GSqqd___5itemsFqd__GSax__T_"></a>
+                    <a name="//apple_ref/swift/Method/add(manyIfLet:items:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FE7ComposeSa3addurFT9manyIfLetKT_GSqqd___5itemsFqd__GSax__T_">add(manyIfLet:items:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Check if the condition is not nil and unwrap it, passing the value to the closure to generate the items</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h5>Declaration</h5>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">mutating</span> <span class="kd">func</span> <span class="n">add</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">manyIfLet</span> <span class="nv">condition</span><span class="p">:</span><span class="kd">@autoclosure</span> <span class="p">()</span><span class="o">-&gt;</span> <span class="kt">T</span><span class="p">?,</span> <span class="nv">items</span><span class="p">:((</span><span class="kt">T</span><span class="p">)</span><span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Element</span><span class="p">]))</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h5>Parameters</h5>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>condition</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>a closure that returns an optional</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>items</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the closure that will use the unwrapped value to generate the items</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/s:FE7ComposeSa3addFT6ifTrueKT_Sb8itemTrueFT_x9itemFalseFT_x_T_"></a>
+                    <a name="//apple_ref/swift/Method/add(ifTrue:itemTrue:itemFalse:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FE7ComposeSa3addFT6ifTrueKT_Sb8itemTrueFT_x9itemFalseFT_x_T_">add(ifTrue:itemTrue:itemFalse:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>check if a condition is true and generates the according item using the right closure</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h5>Declaration</h5>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">add</span><span class="p">(</span><span class="n">ifTrue</span> <span class="nv">condition</span><span class="p">:</span><span class="kd">@autoclosure</span> <span class="p">()</span><span class="o">-&gt;</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">itemTrue</span><span class="p">:(()</span><span class="o">-&gt;</span> <span class="kt">Element</span><span class="p">),</span> <span class="nv">itemFalse</span><span class="p">:(()</span><span class="o">-&gt;</span> <span class="kt">Element</span><span class="p">))</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h5>Parameters</h5>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>condition</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the closure to check</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>itemTrue</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the closure to generate the item if the condition is true</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>itemFalse</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the closure to generate the item if the condition is false</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/s:FE7ComposeSa3addFT10manyIfTrueKT_Sb9itemsTrueFT_GSax_10itemsFalseFT_GSax__T_"></a>
+                    <a name="//apple_ref/swift/Method/add(manyIfTrue:itemsTrue:itemsFalse:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FE7ComposeSa3addFT10manyIfTrueKT_Sb9itemsTrueFT_GSax_10itemsFalseFT_GSax__T_">add(manyIfTrue:itemsTrue:itemsFalse:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>check if a condition is true and generates the according items using the right closure</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h5>Declaration</h5>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">add</span><span class="p">(</span><span class="n">manyIfTrue</span> <span class="nv">condition</span><span class="p">:</span><span class="kd">@autoclosure</span> <span class="p">()</span><span class="o">-&gt;</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">itemsTrue</span><span class="p">:(()</span><span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Element</span><span class="p">]),</span> <span class="nv">itemsFalse</span><span class="p">:(()</span><span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Element</span><span class="p">]))</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h5>Parameters</h5>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>condition</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the closure to check</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>itemsTrue</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the closure to generate the items if the condition is true</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>itemsFalse</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the closure to generate the items if the condition is false</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class='footer'>
+      <p>© 2016 <a class="link" href="https://github.com/vivareal" target="_blank" rel="external">VivaReal</a>. All rights reserved.</p>
+      <p>Generated by <a class='link' href='https://github.com/realm/jazzy' target='_blank' rel='external'>jazzy ♪♫ v0.7.2</a>, a <a class='link' href='http://realm.io' target='_blank' rel='external'>Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>

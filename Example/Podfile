@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'Compose_Example' do
+  pod 'Compose', :path => '../'
+  pod 'NibDesignable'
+
+  target 'Compose_ExampleTests' do
+    inherit! :search_paths
+    
+  end
+end

@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>ComposingUnit Protocol Reference</title>
+    <link rel='stylesheet' type='text/css' href='../css/jazzy.css' />
+    <link rel='stylesheet' type='text/css' href='../css/highlight.css' />
+    <meta charset='utf-8'>
+    <script src='../js/jquery.min.js' defer></script>
+    <script src='../js/jazzy.js' defer></script>
+  </head>
+  <body>
+
+    <a name='//apple_ref/swift/Protocol/ComposingUnit' class='dashAnchor'></a>
+
+    <a title='ComposingUnit Protocol Reference'></a>
+
+    <header class='header'>
+      <p class='header-col header-col--primary'>
+        <a class='header-link' href='../index.html'>
+          Compose Docs
+        </a>
+         (92% documented)
+      </p>
+    
+        <p class='header-col header-col--secondary'>
+          <a class='header-link' href='http://github.com/vivalreal/Compose'>
+            <img class='header-icon' src='../img/gh.png'/>
+            View on GitHub
+          </a>
+        </p>
+    
+    </header>
+
+    <p class='breadcrumbs'>
+      <a class='breadcrumb' href='../index.html'>Compose Reference</a>
+      <img class='carat' src='../img/carat.png' />
+      ComposingUnit Protocol Reference
+    </p>
+
+    <div class='content-wrapper'>
+      <nav class='navigation'>
+        <ul class='nav-groups'>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='../Guides.html'>Guides</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../introduction.html'>Introduction</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../composingunit-api.html'>ComposingUnit API</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../building-ui.html'>Building UI</a>
+              </li>
+            </ul>
+          </li>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='../Composing Unit.html'>Composing Unit</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Protocols/ComposingUnit.html'>ComposingUnit</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Structs/DimensionUnit.html'>DimensionUnit</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Protocols/TypedUnit.html'>TypedUnit</a>
+              </li>
+            </ul>
+          </li>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='../Container.html'>Container</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Protocols/ComposingContainer.html'>ComposingContainer</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Enums/ComposingContainerDirection.html'>ComposingContainerDirection</a>
+              </li>
+            </ul>
+          </li>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='../Collections.html'>Collections</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/CollectionStackView.html'>CollectionStackView</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/ComposingCollectionView.html'>ComposingCollectionView</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/ComposingUnitCollectionViewCell.html'>ComposingUnitCollectionViewCell</a>
+              </li>
+            </ul>
+          </li>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='../Table.html'>Table</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/TableStackView.html'>TableStackView</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/ComposingTableView.html'>ComposingTableView</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Classes/ComposingUnitTableViewCell.html'>ComposingUnitTableViewCell</a>
+              </li>
+            </ul>
+          </li>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='../Extending Units.html'>Extending Units</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Protocols/SelectableUnit.html'>SelectableUnit</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Protocols/TwoStepDisplayUnit.html'>TwoStepDisplayUnit</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Protocols/HighlightableUnit.html'>HighlightableUnit</a>
+              </li>
+            </ul>
+          </li>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='../ViewUnit.html'>ViewUnit</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Structs/ViewUnit.html'>ViewUnit</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Enums/ViewTraits.html'>ViewTraits</a>
+              </li>
+            </ul>
+          </li>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='../Conditional Array.html'>Conditional Array</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Extensions/Array.html'>Array</a>
+              </li>
+            </ul>
+          </li>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='../UIKit Extensions.html'>UIKit Extensions</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Extensions/UICollectionViewCell.html'>UICollectionViewCell</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Extensions/UITableViewCell.html'>UITableViewCell</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Extensions/UIEdgeInsets.html'>UIEdgeInsets</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Extensions/UIView.html'>UIView</a>
+              </li>
+            </ul>
+          </li>
+          <li class='nav-group-name'>
+            <a class='nav-group-name-link' href='../Sample Units.html'>Sample Units</a>
+            <ul class='nav-group-tasks'>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Structs/CollectionStackUnit.html'>CollectionStackUnit</a>
+              </li>
+              <li class='nav-group-task'>
+                <a class='nav-group-task-link' href='../Structs/LabelUnit.html'>LabelUnit</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class='main-content'>
+
+        <section class='section'>
+          <div class='section-content'>
+            <h1>ComposingUnit</h1>
+              <div class='declaration'>
+                <div class='language'>
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ComposingUnit</span></code></pre>
+
+                </div>
+              </div>
+            <p>A ComposingUnit represents an unit that knows how to display some data inside some View.</p>
+
+          </div>
+        </section>
+
+        <section class='section'>
+          <div class='section-content'>
+            <div class="task-group">
+              <ul class='item-container'>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/s:vP7Compose13ComposingUnit10identifierSS"></a>
+                    <a name="//apple_ref/swift/Property/identifier" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vP7Compose13ComposingUnit10identifierSS">identifier</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Unit identifier</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h5>Declaration</h5>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">identifier</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/s:vP7Compose13ComposingUnit10heightUnitVS_13DimensionUnit"></a>
+                    <a name="//apple_ref/swift/Property/heightUnit" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vP7Compose13ComposingUnit10heightUnitVS_13DimensionUnit">heightUnit</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Height dimension</p>
+
+                      </div>
+                      <h5>Default Implementation</h5>
+                      <div class="default_impl abstract">
+                        <p>Default to 0</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h5>Declaration</h5>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">heightUnit</span><span class="p">:</span> <span class="kt"><a href="../Structs/DimensionUnit.html">DimensionUnit</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/s:vP7Compose13ComposingUnit9widthUnitVS_13DimensionUnit"></a>
+                    <a name="//apple_ref/swift/Property/widthUnit" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vP7Compose13ComposingUnit9widthUnitVS_13DimensionUnit">widthUnit</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Width dimension</p>
+
+                      </div>
+                      <h5>Default Implementation</h5>
+                      <div class="default_impl abstract">
+                        <p>Default to 0</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h5>Declaration</h5>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">var</span> <span class="nv">widthUnit</span><span class="p">:</span> <span class="kt"><a href="../Structs/DimensionUnit.html">DimensionUnit</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/s:FP7Compose13ComposingUnit9configureFT4viewCSo6UIView_T_"></a>
+                    <a name="//apple_ref/swift/Method/configure(view:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP7Compose13ComposingUnit9configureFT4viewCSo6UIView_T_">configure(view:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>You can customize and fill your view with data inside this method</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h5>Declaration</h5>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">configure</span><span class="p">(</span><span class="nv">view</span><span class="p">:</span> <span class="kt">UIView</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h5>Parameters</h5>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>view</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the view to be customized. You may want to cast it to your specific view class</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/s:FP7Compose13ComposingUnit15reuseIdentifierFT_SS"></a>
+                    <a name="//apple_ref/swift/Method/reuseIdentifier()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP7Compose13ComposingUnit15reuseIdentifierFT_SS">reuseIdentifier()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Reuse identifier for this Unit. Used inside collectionViews and tableViews to manage reuse for cells</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h5>Declaration</h5>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">reuseIdentifier</span><span class="p">()</span><span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h5>Return Value</h5>
+                        <p>the reuse identifier for this unit</p>
+
+                      </div>
+                      <div class="slightly-smaller">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/s:FP7Compose13ComposingUnit8registerFT2inCSo16UICollectionView_T_"></a>
+                    <a name="//apple_ref/swift/Method/register(in:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP7Compose13ComposingUnit8registerFT2inCSo16UICollectionView_T_">register(in:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Register a collectionViewCell, so we can dequeue these cells later inside collectionViews</p>
+
+                      </div>
+                      <h5>Default Implementation</h5>
+                      <div class="default_impl abstract">
+                        <p>Default implementation throw error on invocation. Must be implemented before this unit can be used inside a <code>UICollectionView</code></p>
+
+<p>Default implementation throw error on invocation. Must be implemented before this unit can be used inside a <code>UITableView</code></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h5>Declaration</h5>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">register</span><span class="p">(</span><span class="k">in</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h5>Parameters</h5>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>collectionView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the collectionView to register the cell</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="item-heading">
+                    <code>
+                    <a name="/s:FP7Compose13ComposingUnit8registerFT2inCSo11UITableView_T_"></a>
+                    <a name="//apple_ref/swift/Method/register(in:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FP7Compose13ComposingUnit8registerFT2inCSo11UITableView_T_">register(in:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Register a tableViewCell, so we can dequeue these cells later inside tableViews</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h5>Declaration</h5>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">register</span><span class="p">(</span><span class="k">in</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h5>Parameters</h5>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>tableView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the tableView to register the cell</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class='footer'>
+      <p>© 2016 <a class="link" href="https://github.com/vivareal" target="_blank" rel="external">VivaReal</a>. All rights reserved.</p>
+      <p>Generated by <a class='link' href='https://github.com/realm/jazzy' target='_blank' rel='external'>jazzy ♪♫ v0.7.2</a>, a <a class='link' href='http://realm.io' target='_blank' rel='external'>Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>

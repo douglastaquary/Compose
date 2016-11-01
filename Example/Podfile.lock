@@ -1,0 +1,19 @@
+PODS:
+  - Compose (0.1.0)
+  - NibDesignable (3.0.0)
+
+DEPENDENCIES:
+  - Compose (from `../`)
+  - NibDesignable
+
+EXTERNAL SOURCES:
+  Compose:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Compose: 89d40c96501ceb2d7afffed6b359f2a9b284b4c1
+  NibDesignable: 6ccf1e54135cb05be0a78f803b9a8d78125a7d6d
+
+PODFILE CHECKSUM: d43d5bc774d2e8ef1f1d5daef5ba38420f3b0007
+
+COCOAPODS: 1.1.0.rc.2

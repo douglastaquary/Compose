@@ -1,0 +1,96 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/bruno/Projects/Github/Compose/Compose/Classes/Protocols/SelectableUnit.swift",
+      "line": 14,
+      "symbol": "SelectableUnit.didSelect()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bruno/Projects/Github/Compose/Compose/Classes/Protocols/SelectableUnit.swift",
+      "line": 15,
+      "symbol": "SelectableUnit.shouldSelect()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bruno/Projects/Github/Compose/Compose/Classes/Protocols/SelectableUnit.swift",
+      "line": 26,
+      "symbol": "SelectableUnit.shouldSelect()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bruno/Projects/Github/Compose/Compose/Classes/Units/CollectionStackUnit.swift",
+      "line": 64,
+      "symbol": "CollectionStackUnit.scrollviewFrom(view:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bruno/Projects/Github/Compose/Compose/Classes/Views/CollectionViewCell/ComposingUnitCollectionViewCell.swift",
+      "line": 22,
+      "symbol": "ComposingUnitCollectionViewCell.init(frame:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bruno/Projects/Github/Compose/Compose/Classes/Views/CollectionViewCell/ComposingUnitCollectionViewCell.swift",
+      "line": 27,
+      "symbol": "ComposingUnitCollectionViewCell.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bruno/Projects/Github/Compose/Compose/Classes/Views/ComposingCollectionView/ComposingCollectionView.swift",
+      "line": 18,
+      "symbol": "ComposingContainerDirection.verticalGrid",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bruno/Projects/Github/Compose/Compose/Classes/Views/ComposingCollectionView/ComposingCollectionView.swift",
+      "line": 24,
+      "symbol": "ComposingContainerDirection.horizontalGrid",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bruno/Projects/Github/Compose/Compose/Classes/Views/ComposingCollectionView/ComposingCollectionView.swift",
+      "line": 128,
+      "symbol": "ComposingCollectionView.scrollDidChangeCallback",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bruno/Projects/Github/Compose/Compose/Classes/Views/TableViewCell/ComposingUnitTableViewCell.swift",
+      "line": 22,
+      "symbol": "ComposingUnitTableViewCell.init(reuseIdentifier:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bruno/Projects/Github/Compose/Compose/Classes/Views/TableViewCell/ComposingUnitTableViewCell.swift",
+      "line": 26,
+      "symbol": "ComposingUnitTableViewCell.init(style:reuseIdentifier:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bruno/Projects/Github/Compose/Compose/Classes/Views/TableViewCell/ComposingUnitTableViewCell.swift",
+      "line": 31,
+      "symbol": "ComposingUnitTableViewCell.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bruno/Projects/Github/Compose/Compose/Classes/Views/TableViewCell/ComposingUnitTableViewCell.swift",
+      "line": 55,
+      "symbol": "ComposingUnitTableViewCell.didMoveToSuperview()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/bruno/Projects/Github/Compose"
+}

@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="L6K-PS-Dbz">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Grid -->
+        <scene sceneID="X3c-O0-qRO">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="O0H-JS-aLe" customClass="MultipleColumnViewController" customModule="Compose_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RHP-aJ-OmK"/>
+                        <viewControllerLayoutGuide type="bottom" id="Muq-PB-3Dh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cr7-TU-41v">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2e8-bR-Blh" customClass="MultipleColumnView" customModule="Compose_Example" customModuleProvider="target">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Xie-Dl-qN4">
+                                <segments>
+                                    <segment title="Vertical"/>
+                                    <segment title="Horizontal"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeOrientationWithSegmentControl:" destination="O0H-JS-aLe" eventType="valueChanged" id="wTw-4v-q03"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2e8-bR-Blh" firstAttribute="top" secondItem="Xie-Dl-qN4" secondAttribute="bottom" constant="16" id="7GC-fS-8fd"/>
+                            <constraint firstItem="2e8-bR-Blh" firstAttribute="leading" secondItem="cr7-TU-41v" secondAttribute="leading" id="BXw-49-XfG"/>
+                            <constraint firstAttribute="trailing" secondItem="Xie-Dl-qN4" secondAttribute="trailing" constant="16" id="fSw-Bh-VHE"/>
+                            <constraint firstAttribute="trailing" secondItem="2e8-bR-Blh" secondAttribute="trailing" id="kzH-yh-W4D"/>
+                            <constraint firstItem="Xie-Dl-qN4" firstAttribute="top" secondItem="RHP-aJ-OmK" secondAttribute="bottom" constant="16" id="mwl-EH-2lJ"/>
+                            <constraint firstItem="Muq-PB-3Dh" firstAttribute="top" secondItem="2e8-bR-Blh" secondAttribute="bottom" id="nUP-gA-jXC"/>
+                            <constraint firstItem="Xie-Dl-qN4" firstAttribute="leading" secondItem="cr7-TU-41v" secondAttribute="leading" constant="16" id="qjY-fN-Yzq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Grid " id="QwB-T6-LEx"/>
+                    <connections>
+                        <outlet property="multipleView" destination="2e8-bR-Blh" id="Z6c-Bf-GAM"/>
+                        <outlet property="orientationSegmentedControl" destination="Xie-Dl-qN4" id="bab-BH-aPn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="16Y-Eg-hxe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2032.8" y="-2029.8350824587708"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="xaK-BA-duM">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="TIc-mY-ADO" customClass="DetailViewController" customModule="Compose_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="10D-Ra-YoB"/>
+                        <viewControllerLayoutGuide type="bottom" id="uOM-i5-uiX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="N4a-Lf-3rB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RSd-he-dqe" customClass="DetailView" customModule="Compose_Example" customModuleProvider="target">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RSd-he-dqe" firstAttribute="top" secondItem="10D-Ra-YoB" secondAttribute="bottom" id="2FF-EN-LHf"/>
+                            <constraint firstItem="RSd-he-dqe" firstAttribute="leading" secondItem="N4a-Lf-3rB" secondAttribute="leading" id="Me7-Sr-Ooj"/>
+                            <constraint firstItem="uOM-i5-uiX" firstAttribute="top" secondItem="RSd-he-dqe" secondAttribute="bottom" id="gad-gM-iiA"/>
+                            <constraint firstAttribute="trailing" secondItem="RSd-he-dqe" secondAttribute="trailing" id="sCl-Qc-NLm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="detailView" destination="RSd-he-dqe" id="rvm-fR-2VC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q2W-qD-XxX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1133.5999999999999" y="-1265.217391304348"/>
+        </scene>
+        <!--Large Collection Inside View Controller-->
+        <scene sceneID="CmK-3w-VYx">
+            <objects>
+                <viewController id="b2F-LI-kOm" customClass="LargeCollectionInsideViewController" customModule="Compose_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="T4s-nh-zoQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="S02-Np-b3R"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yQ5-vv-q2V">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3s1-Ij-BRV" customClass="LargeCollectionInsideView" customModule="Compose_Example" customModuleProvider="target">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="3s1-Ij-BRV" firstAttribute="leading" secondItem="yQ5-vv-q2V" secondAttribute="leading" id="IIg-1h-Bog"/>
+                            <constraint firstAttribute="trailing" secondItem="3s1-Ij-BRV" secondAttribute="trailing" id="mae-XW-Kll"/>
+                            <constraint firstItem="S02-Np-b3R" firstAttribute="top" secondItem="3s1-Ij-BRV" secondAttribute="bottom" id="nLl-yU-kaa"/>
+                            <constraint firstItem="3s1-Ij-BRV" firstAttribute="top" secondItem="yQ5-vv-q2V" secondAttribute="top" id="wLd-6k-kJZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="insideView" destination="3s1-Ij-BRV" id="8Vj-He-9i3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z7x-wi-jpC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1165.5999999999999" y="225.33733133433284"/>
+        </scene>
+        <!--Compose Examples-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SelectExampleViewController" customModule="Compose_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rgS-vC-dS0" customClass="TableStackView" customModule="Compose">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rgS-vC-dS0" secondAttribute="bottom" id="2u2-N3-pfb"/>
+                            <constraint firstAttribute="trailing" secondItem="rgS-vC-dS0" secondAttribute="trailing" id="J6C-p7-U9J"/>
+                            <constraint firstItem="rgS-vC-dS0" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="OWu-v4-6cV"/>
+                            <constraint firstItem="rgS-vC-dS0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="evp-62-JWZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Compose Examples" id="0Mg-bF-cAz"/>
+                    <connections>
+                        <outlet property="stackView" destination="rgS-vC-dS0" id="2Mu-Pd-353"/>
+                        <segue destination="SdC-i2-t18" kind="show" identifier="filter" id="3BO-jp-0DS"/>
+                        <segue destination="Z9d-le-8BR" kind="show" identifier="login" id="FPu-do-Ki1"/>
+                        <segue destination="HKX-Xc-mxN" kind="show" identifier="move" id="90O-N1-7V2"/>
+                        <segue destination="O0H-JS-aLe" kind="show" identifier="columns" id="lkG-9O-gz9"/>
+                        <segue destination="TIc-mY-ADO" kind="show" identifier="detail" id="ioT-79-nbN"/>
+                        <segue destination="b2F-LI-kOm" kind="show" identifier="insideCollection" id="Gpa-rf-ehd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1165.5999999999999" y="-545.57721139430294"/>
+        </scene>
+        <!--Move-->
+        <scene sceneID="Mit-hk-l2T">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="HKX-Xc-mxN" customClass="MoveViewController" customModule="Compose_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Yx7-fE-Xbw"/>
+                        <viewControllerLayoutGuide type="bottom" id="BBo-Pr-B7m"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="40O-Ej-gxU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CfG-3g-u68" customClass="MoveView" customModule="Compose_Example" customModuleProvider="target">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CfG-3g-u68" firstAttribute="leading" secondItem="40O-Ej-gxU" secondAttribute="leading" id="ELm-iR-r1D"/>
+                            <constraint firstItem="CfG-3g-u68" firstAttribute="top" secondItem="Yx7-fE-Xbw" secondAttribute="bottom" id="KVl-Aj-sJF"/>
+                            <constraint firstItem="BBo-Pr-B7m" firstAttribute="top" secondItem="CfG-3g-u68" secondAttribute="bottom" id="Wy1-3O-zz9"/>
+                            <constraint firstAttribute="trailing" secondItem="CfG-3g-u68" secondAttribute="trailing" id="Ywa-Lh-XqZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Move" id="48z-5o-2IR"/>
+                    <connections>
+                        <outlet property="moveView" destination="CfG-3g-u68" id="eCX-v3-7d1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gPp-mU-kaP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2032.8" y="213.64317841079463"/>
+        </scene>
+        <!--Login-->
+        <scene sceneID="scq-H5-Kfz">
+            <objects>
+                <viewController id="Z9d-le-8BR" customClass="LoginViewController" customModule="Compose_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Qsq-qi-ZFH"/>
+                        <viewControllerLayoutGuide type="bottom" id="1E0-CR-k8m"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QzX-kJ-LXW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X33-Ai-0Ni" customClass="LoginView" customModule="Compose_Example" customModuleProvider="target">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="X33-Ai-0Ni" firstAttribute="top" secondItem="QzX-kJ-LXW" secondAttribute="top" id="1gI-1N-wop"/>
+                            <constraint firstItem="1E0-CR-k8m" firstAttribute="top" secondItem="X33-Ai-0Ni" secondAttribute="bottom" id="T6S-A7-I3u"/>
+                            <constraint firstItem="X33-Ai-0Ni" firstAttribute="leading" secondItem="QzX-kJ-LXW" secondAttribute="leading" id="bxN-dA-uui"/>
+                            <constraint firstAttribute="trailing" secondItem="X33-Ai-0Ni" secondAttribute="trailing" id="fPU-LI-bnO"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <navigationItem key="navigationItem" title="Login" id="Hf8-Pf-cyb"/>
+                    <connections>
+                        <outlet property="loginView" destination="X33-Ai-0Ni" id="bDF-2r-jki"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DbQ-OX-WfR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2032.8" y="-1296.7016491754123"/>
+        </scene>
+        <!--Filter-->
+        <scene sceneID="dXI-Jc-K4H">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="SdC-i2-t18" customClass="FilterExampleViewController" customModule="Compose_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HbD-Tj-STU"/>
+                        <viewControllerLayoutGuide type="bottom" id="Y7c-ht-lj8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5BH-q8-Mj1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" showsScopeBar="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wS1-HX-fLj">
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.023529411760000001" green="0.65098039220000004" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>All</string>
+                                    <string>Is Going</string>
+                                    <string>Not Going</string>
+                                </scopeButtonTitles>
+                            </searchBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BAA-1M-6xq" customClass="TableStackView" customModule="Compose">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Y7c-ht-lj8" firstAttribute="top" secondItem="BAA-1M-6xq" secondAttribute="bottom" id="6Cf-M3-2rM"/>
+                            <constraint firstItem="wS1-HX-fLj" firstAttribute="top" secondItem="HbD-Tj-STU" secondAttribute="bottom" id="6Rv-G4-yns"/>
+                            <constraint firstAttribute="trailing" secondItem="wS1-HX-fLj" secondAttribute="trailing" id="7Oq-Ex-89e"/>
+                            <constraint firstItem="BAA-1M-6xq" firstAttribute="top" secondItem="wS1-HX-fLj" secondAttribute="bottom" id="GhK-V8-EWL"/>
+                            <constraint firstItem="BAA-1M-6xq" firstAttribute="leading" secondItem="5BH-q8-Mj1" secondAttribute="leading" id="ge1-xZ-WAu"/>
+                            <constraint firstAttribute="trailing" secondItem="BAA-1M-6xq" secondAttribute="trailing" id="sd2-DO-SCU"/>
+                            <constraint firstItem="wS1-HX-fLj" firstAttribute="leading" secondItem="5BH-q8-Mj1" secondAttribute="leading" id="xt8-Lg-uxq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Filter" id="uYb-Zv-9M4"/>
+                    <connections>
+                        <outlet property="searchBar" destination="wS1-HX-fLj" id="mPi-9l-6a2"/>
+                        <outlet property="stackView" destination="BAA-1M-6xq" id="NfK-0O-BRp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kro-gl-6eq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2032.8" y="-546.47676161919048"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="GRX-Jt-N71">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="L6K-PS-Dbz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ocF-od-EaD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Ihh-ok-nEI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wij-Mk-9R2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="-545.57721139430294"/>
+        </scene>
+    </scenes>
+</document>

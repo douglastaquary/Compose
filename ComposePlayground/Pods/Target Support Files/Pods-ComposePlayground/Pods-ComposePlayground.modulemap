@@ -1,0 +1,6 @@
+framework module Pods_ComposePlayground {
+  umbrella header "Pods-ComposePlayground-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,16 @@
+PODS:
+  - Compose (0.1.0)
+
+DEPENDENCIES:
+  - Compose (from `/Users/bruno/Projects/Github/Compose`)
+
+EXTERNAL SOURCES:
+  Compose:
+    :path: /Users/bruno/Projects/Github/Compose
+
+SPEC CHECKSUMS:
+  Compose: bf22438058f1e3f73e6305b14b9e8cff3640fd71
+
+PODFILE CHECKSUM: 67c0cb64e9a0e761bb2a48609f630a47d242371e
+
+COCOAPODS: 1.1.0.rc.2
