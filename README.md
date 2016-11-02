@@ -1,5 +1,7 @@
 # Compose
 [![Version](https://img.shields.io/cocoapods/v/Compose.svg?style=flat)](http://cocoapods.org/pods/Compose)
+[![Pod Platform](https://img.shields.io/cocoapods/p/Compose.svg)](http://cocoapods.org/pods/Compose)
+[![Pod License](https://img.shields.io/cocoapods/l/Compose.svg)](https://github.com/vivareal/Compose/blob/master/LICENSE)
 
 Compose is a data driven library that will help compose your complex and dynamic Views.
 

@@ -5,8 +5,7 @@ module: Compose
 module_version: 1.0
 readme: Documentation/TMP/README.md
 documentation: Documentation/*.md
-podspec: Compose.podspec
-github_url: http://github.com/vivalreal/Compose
+github_url: http://github.com/vivareal/Compose
 theme: Documentation/jazzy-theme
 
 custom_categories:

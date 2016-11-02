@@ -53,6 +53,7 @@
 		15A137411DB92A480047AD05 /* ComposingCollectionViewDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A1373F1DB92A480047AD05 /* ComposingCollectionViewDelegateTests.swift */; };
 		15A1376F1DBEFB510047AD05 /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A1376E1DBEFB510047AD05 /* UITableViewCell+Extensions.swift */; };
 		15B52F0C1DC818D7004A1881 /* TypedUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B52F0B1DC818D7004A1881 /* TypedUnit.swift */; };
+		15BD91C41DCA9A250088AEB4 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = 15BD91C31DCA9A250088AEB4 /* .travis.yml */; };
 		15DC72EF1DAD5B5000FFBA9F /* ArrayAddTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DC72EE1DAD5B5000FFBA9F /* ArrayAddTests.swift */; };
 		15DC72F11DAD5B8900FFBA9F /* SizeUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DC72F01DAD5B8900FFBA9F /* SizeUnitTests.swift */; };
 /* End PBXBuildFile section */
@@ -111,7 +112,6 @@
 		15A136F51DB702550047AD05 /* Building UI.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; lineEnding = 0; path = "Building UI.md"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.markdown; };
 		15A136FB1DB7069F0047AD05 /* .jazzy.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .jazzy.yaml; sourceTree = "<group>"; };
 		15A136FE1DB709ED0047AD05 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		15A137001DB7B1240047AD05 /* What is a DimensionUnit.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "What is a DimensionUnit.md"; sourceTree = "<group>"; };
 		15A137021DB846520047AD05 /* TableStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableStackView.swift; sourceTree = "<group>"; };
 		15A1372D1DB927C70047AD05 /* UIEdgeInsetsExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIEdgeInsetsExtensionTests.swift; sourceTree = "<group>"; };
 		15A1372E1DB927C70047AD05 /* UIViewExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensionTests.swift; sourceTree = "<group>"; };
@@ -125,6 +125,7 @@
 		15A1373F1DB92A480047AD05 /* ComposingCollectionViewDelegateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposingCollectionViewDelegateTests.swift; sourceTree = "<group>"; };
 		15A1376E1DBEFB510047AD05 /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
 		15B52F0B1DC818D7004A1881 /* TypedUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypedUnit.swift; sourceTree = "<group>"; };
+		15BD91C31DCA9A250088AEB4 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		15DC72EE1DAD5B5000FFBA9F /* ArrayAddTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayAddTests.swift; sourceTree = "<group>"; };
 		15DC72F01DAD5B8900FFBA9F /* SizeUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeUnitTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -319,6 +320,7 @@
 		152EBE621DB00A0600036F17 /* Compose Metadata */ = {
 			isa = PBXGroup;
 			children = (
+				15BD91C31DCA9A250088AEB4 /* .travis.yml */,
 				15A136FB1DB7069F0047AD05 /* .jazzy.yaml */,
 				152EBE631DB00A1700036F17 /* Compose.podspec */,
 				152EBE641DB00A1700036F17 /* LICENSE */,
@@ -365,7 +367,6 @@
 				15A136F11DB6FF0F0047AD05 /* Introduction.md */,
 				15A136F31DB701770047AD05 /* ComposingUnit API.md */,
 				15A136F51DB702550047AD05 /* Building UI.md */,
-				15A137001DB7B1240047AD05 /* What is a DimensionUnit.md */,
 			);
 			path = Documentation;
 			sourceTree = "<group>";
@@ -484,6 +485,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15BD91C41DCA9A250088AEB4 /* .travis.yml in Resources */,
 				15A136FC1DB7069F0047AD05 /* .jazzy.yaml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
