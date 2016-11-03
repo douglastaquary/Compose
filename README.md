@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/vivareal/Compose.svg)](https://travis-ci.org/vivareal/Compose)
+[![Build Status](https://travis-ci.org/VivaReal/Compose.svg?branch=master)](https://travis-ci.org/VivaReal/Compose)
 [![codecov.io](http://codecov.io/github/vivareal/Compose/coverage.svg)](http://codecov.io/github/vivareal/Compose)
 [![Version](https://img.shields.io/cocoapods/v/Compose.svg?style=flat)](http://cocoapods.org/pods/Compose)
 [![Pod Platform](https://img.shields.io/cocoapods/p/Compose.svg)](http://cocoapods.org/pods/Compose)
