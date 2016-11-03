@@ -174,63 +174,136 @@
         <section class='section'>
           <div class='section-content'>
             
-            <a href='#compose' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='compose'>Compose</h1>
+            <p><a href="https://travis-ci.org/vivareal/Compose"><img src="https://travis-ci.org/vivareal/Compose.svg" alt="Build Status"></a>
+<a href="http://codecov.io/github/vivareal/Compose"><img src="http://codecov.io/github/vivareal/Compose/coverage.svg" alt="codecov.io"></a>
+<a href="http://cocoapods.org/pods/Compose"><img src="https://img.shields.io/cocoapods/v/Compose.svg?style=flat" alt="Version"></a>
+<a href="http://cocoapods.org/pods/Compose"><img src="https://img.shields.io/cocoapods/p/Compose.svg" alt="Pod Platform"></a>
+<a href="https://github.com/vivareal/Compose/blob/master/LICENSE"><img src="https://img.shields.io/cocoapods/l/Compose.svg" alt="Pod License"></a></p>
+<a href='#compose-is-a-data-driven-library-that-will-help-compose-your-complex-and-dynamic-views' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='compose-is-a-data-driven-library-that-will-help-compose-your-complex-and-dynamic-views'>Compose is a data driven library that will help compose your complex and dynamic Views.</h1>
 
-<p><a href="http://cocoapods.org/pods/Compose"><img src="https://img.shields.io/cocoapods/v/Compose.svg?style=flat" alt="Version"></a></p>
+<p>It helps you create complex and dynamic Views using easy and simple composition of data structures. It is really easy to use and extend.</p>
 
-<p>Compose is a data driven library that will help compose your complex and dynamic Views.</p>
-<a href='#motivation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='motivation'>Motivation</h2>
+<p><strong>And it also is a breeze to implement on existing projects.</strong></p>
+<a href='#first-you-will-create-units-that-encapsulates-the-data-they-will-display' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='first-you-will-create-units-that-encapsulates-the-data-they-will-display'>First you will create units that encapsulates the data they will display</h2>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">info</span> <span class="o">=</span> <span class="s">"Info to be displayed"</span>
+<span class="k">let</span> <span class="nv">infoUnit</span> <span class="o">=</span> <span class="kt">LabelUnit</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="n">info</span><span class="p">,</span> <span class="nv">traits</span><span class="p">:</span> <span class="p">[</span><span class="o">.</span><span class="nf">height</span><span class="p">(</span><span class="mi">40</span><span class="p">)])</span>
+</code></pre>
 
-<p>We built Compose so we could easy manage and A/B test our complex views.</p>
+<p>and then, you can add this unit to a container:</p>
+<pre class="highlight swift"><code><span class="n">container</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="p">[</span><span class="n">infoUnit</span><span class="p">]</span>
+</code></pre>
 
-<p>That instead of dealing with many dataSources and delegates methods, we could focus on delivering shine and new components. Instead of switching <code>indexPaths</code> we could change each component position as we wished.</p>
-<a href='#composingunit' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='composingunit'>ComposingUnit</h2>
+<p>you can also conditionaly add this unit to the container, like:</p>
+<pre class="highlight swift"><code><span class="k">var</span> <span class="nv">units</span><span class="p">:</span> <span class="p">[</span><span class="kt">ComposingUnit</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="o">....</span><span class="p">]</span>
+<span class="n">units</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">if</span><span class="p">:</span> <span class="n">someCondition</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kt">LabelUnit</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="n">info</span><span class="p">,</span> <span class="nv">traits</span><span class="p">:</span> <span class="p">[</span><span class="o">.</span><span class="nf">height</span><span class="p">(</span><span class="mi">40</span><span class="p">)])</span>
+<span class="p">}</span>
+<span class="n">container</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="n">units</span>
+</code></pre>
 
-<p>The protocol <a href="https://vivareal.github.io/Compose/Protocols/ComposingUnit.html">ComposingUnit</a> is at the center of this library. Any class or struct can conform to it, and it has few properties and methods that needs to be implemented. It should store all data that will be presented by this unit. </p>
+<p>So, instead of dealing with many dataSource/delegate methods you can just create an array of <code>ComposingUnit</code>s and assign it to a <code>state</code> property of a container.</p>
+<a href='#so-what-are-composingunits' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='so-what-are-composingunits'>So, what are ComposingUnits?</h2>
 
-<p>A unit also is responsible for selecting which UIView will render it&rsquo;s data, and once an UIView is dequeued from a container, it is also the unit job to bind that data to the view.</p>
+<p><strong>The protocol <a href="https://vivareal.github.io/Compose/Protocols/ComposingUnit.html">ComposingUnit</a> is the heart of this framework.</strong></p>
+
+<p>You can make any class or structure conform to it, taking the advantages of <code>Value Type</code> and <code>Reference Type</code> when they best suits your needs.
+Also, this class/structure <strong>should hold all the data that it will display</strong>. With this approach, we don&rsquo;t need to hold a reference to the models that generated these units.</p>
+
+<p>Let&rsquo;s say we want to display a list of all the feed items we have.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">feedItems</span><span class="p">:</span> <span class="p">[</span><span class="kt">FeedItem</span><span class="p">]</span> <span class="o">=</span> <span class="o">...</span> <span class="c1">//You can grab an array from CoreData, JSON, Realm, anywhere...</span>
+<span class="k">var</span> <span class="nv">feedUnits</span><span class="p">:</span> <span class="p">[</span><span class="kt">ComposingUnit</span><span class="p">]</span> <span class="o">=</span> <span class="n">feedItems</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span> <span class="kt">FeedUnit</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="nv">$0</span><span class="o">.</span><span class="n">uniqueId</span><span class="p">,</span> <span class="nv">title</span><span class="p">:</span> <span class="nv">$0</span><span class="o">.</span><span class="n">title</span><span class="p">,</span> <span class="nv">image</span><span class="p">:</span> <span class="nv">$0</span><span class="o">.</span><span class="n">image</span><span class="p">,</span> <span class="nv">likeCount</span><span class="p">:</span><span class="kt">Int</span><span class="p">)</span> <span class="p">}</span>
+<span class="n">container</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="n">feedUnits</span>
+</code></pre>
+
+<p>So after we create the <code>feedUnits</code> array we don&rsquo;t need <code>feedItems</code> anymore and we can easily use our feedUnits in any thread.
+<strong>And we can add any other <code>ComposingUnit</code> to this array, allowing us to display a view totally different to a feed item in the same list</strong></p>
+<pre class="highlight swift"><code><span class="n">feedUnits</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">if</span><span class="p">:</span> <span class="n">feedUnits</span><span class="o">.</span><span class="n">count</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kt">SeeMoreFeedsUnit</span><span class="p">(</span><span class="nv">feedsCount</span><span class="p">:</span> <span class="n">feedUnits</span><span class="o">.</span><span class="n">count</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+<a href='#handling-selection-and-other-delegates-callbacks' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='handling-selection-and-other-delegates-callbacks'>Handling selection and other delegates callbacks</h3>
+
+<p>To handle <strong>cell selection</strong> or other delegate callbacks, all your class/structure has to do is implement an applicable <code>Protocol</code>. For cell selection it is the <code>SelectableUnit</code> protocol. This protocol defines a method that will be called once the cell has been selected. </p>
+
+<p>You can check all <a href="https://vivareal.github.io/Compose/Extending%20Units.html">extension protocols here</a></p>
+<a href='#grouping-units-to-represent-a-single-unit' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='grouping-units-to-represent-a-single-unit'>Grouping units to represent a single unit</h3>
+
+<p>You can also use a <a href="https://vivareal.github.io/Compose/Structs/CollectionStackUnit.html">CollectionStackUnit</a> to group some units together as a single unit</p>
+<pre class="highlight swift"><code><span class="k">var</span> <span class="nv">units</span><span class="p">:</span> <span class="p">[</span><span class="kt">ComposingUnit</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span> <span class="c1">//create somewhere</span>
+<span class="n">units</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">ifLet</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">optionalFeedItem</span><span class="p">)</span> <span class="p">{</span> <span class="n">feedItem</span> <span class="k">in</span>
+    <span class="k">var</span> <span class="nv">innerUnits</span><span class="p">:</span> <span class="p">[</span><span class="kt">ComposingUnit</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="kt">HeaderUnit</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="n">feedItem</span><span class="o">.</span><span class="n">title</span><span class="p">)]</span>
+    <span class="n">innerUnits</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">ifLet</span><span class="p">:</span> <span class="n">feedItem</span><span class="o">.</span><span class="n">image</span><span class="p">)</span> <span class="p">{</span> <span class="n">image</span> <span class="k">in</span>
+        <span class="k">return</span> <span class="kt">FeedImageUnit</span><span class="p">(</span><span class="nv">image</span><span class="p">:</span> <span class="n">image</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="n">innerUnits</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">ifLet</span><span class="p">:</span> <span class="n">feedItem</span><span class="o">.</span><span class="n">video</span><span class="p">)</span> <span class="p">{</span> <span class="n">video</span> <span class="k">in</span>
+        <span class="k">return</span> <span class="kt">FeedVideoUnit</span><span class="p">(</span><span class="nv">video</span><span class="p">:</span> <span class="n">video</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="n">innerUnits</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="kt">ActionBarUnit</span><span class="p">(</span><span class="nv">likes</span><span class="p">:</span> <span class="n">feedItem</span><span class="o">.</span><span class="n">likes</span><span class="p">,</span> <span class="nv">comments</span><span class="p">:</span> <span class="n">feedItem</span><span class="o">.</span><span class="n">comments</span><span class="p">))</span>
+    <span class="k">let</span> <span class="nv">unit</span> <span class="o">=</span> <span class="kt">CollectionStackUnit</span><span class="p">(</span><span class="nv">identifier</span><span class="p">:</span> <span class="n">feedItem</span><span class="o">.</span><span class="n">uniqueIdentifier</span><span class="p">,</span> <span class="nv">direction</span><span class="p">:</span> <span class="o">.</span><span class="n">vertical</span><span class="p">,</span> <span class="nv">traits</span><span class="p">:</span> <span class="p">[],</span> <span class="nv">units</span><span class="p">:</span> <span class="n">innerUnits</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">unit</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>Maybe you could also create a function that returns this item based on a FeedItem</p>
+<pre class="highlight swift"><code>    <span class="kd">func</span> <span class="kt">FeedUnit</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="kt">FeedItem</span><span class="p">)</span><span class="o">-&gt;</span> <span class="kt">CollectionStackUnit</span> <span class="p">{</span>
+        <span class="k">var</span> <span class="nv">innerUnits</span><span class="p">:</span> <span class="p">[</span><span class="kt">ComposingUnit</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="kt">HeaderUnit</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="n">feedItem</span><span class="o">.</span><span class="n">title</span><span class="p">)]</span>
+        <span class="n">innerUnits</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">ifLet</span><span class="p">:</span> <span class="n">feedItem</span><span class="o">.</span><span class="n">image</span><span class="p">)</span> <span class="p">{</span> <span class="n">image</span> <span class="k">in</span>
+            <span class="k">return</span> <span class="kt">FeedImageUnit</span><span class="p">(</span><span class="nv">image</span><span class="p">:</span> <span class="n">image</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="n">innerUnits</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">ifLet</span><span class="p">:</span> <span class="n">feedItem</span><span class="o">.</span><span class="n">video</span><span class="p">)</span> <span class="p">{</span> <span class="n">video</span> <span class="k">in</span>
+            <span class="k">return</span> <span class="kt">FeedVideoUnit</span><span class="p">(</span><span class="nv">video</span><span class="p">:</span> <span class="n">video</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="n">innerUnits</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="kt">ActionBarUnit</span><span class="p">(</span><span class="nv">likes</span><span class="p">:</span> <span class="n">feedItem</span><span class="o">.</span><span class="n">likes</span><span class="p">,</span> <span class="nv">comments</span><span class="p">:</span> <span class="n">feedItem</span><span class="o">.</span><span class="n">comments</span><span class="p">))</span>
+        <span class="k">let</span> <span class="nv">unit</span> <span class="o">=</span> <span class="kt">CollectionStackUnit</span><span class="p">(</span><span class="nv">identifier</span><span class="p">:</span> <span class="n">feedItem</span><span class="o">.</span><span class="n">uniqueIdentifier</span><span class="p">,</span> <span class="nv">direction</span><span class="p">:</span> <span class="o">.</span><span class="n">vertical</span><span class="p">,</span> <span class="nv">traits</span><span class="p">:</span> <span class="p">[],</span> <span class="nv">units</span><span class="p">:</span> <span class="n">innerUnits</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">unit</span>
+    <span class="p">}</span>
+
+</code></pre>
+<pre class="highlight swift"><code><span class="k">var</span> <span class="nv">units</span><span class="p">:</span> <span class="p">[</span><span class="kt">ComposingUnit</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span> <span class="c1">//create somewhere</span>
+<span class="n">units</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">ifLet</span><span class="p">:</span> <span class="n">data</span><span class="o">.</span><span class="n">optionalFeedItem</span><span class="p">)</span> <span class="p">{</span> <span class="n">feedItem</span> <span class="k">in</span>
+    <span class="k">return</span> <span class="kt">FeedUnit</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">feedItem</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre>
+<a href='#dynamic-cell-size-calculation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='dynamic-cell-size-calculation'>Dynamic cell size calculation</h3>
+
+<p>We use a struct called <a href="https://vivareal.github.io/Compose/Structs/DimensionUnit.html">DimensionUnit</a> to represent a cell width/height calculation. A <code>DimensionUnit</code> can calculate a dimension using:
+* Static values: It will ignore it&rsquo;s container size and always return this static value
+* Percent based values: It will return a percentual of it&rsquo;s container dimension
+* Total value based: It will return it&rsquo;s container dimension minus a static value
+* Custom based: It will execute a closure passing it&rsquo;s container size as parameter.</p>
+
+<p>Using <code>DimensionUnit</code> we can easily express our units height and width.</p>
 <a href='#composingcontainer' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='composingcontainer'>ComposingContainer</h2>
 
-<p>A ComposingContainer is an UIView that knows how do display an array of <code>ComposingUnit</code>s. We provide two containers in the framework: <code>ComposingCollectionView</code> and <code>ComposingTableView</code>. Both have <strong>automatic</strong> detection of inserts/updates/deletes of ComposingUnits they are displaying.</p>
-<a href='#example' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='example'>Example</h2>
+<p>In order to display an array of <code>ComposingUnit</code>s you will need an UIView that conforms to <code>ComposingContainer</code>.  </p>
 
-<p>So, for you to get an example, after creating some units we could easly <strong>compose</strong> our view like this:</p>
-<pre class="highlight swift"><code><span class="n">units</span><span class="o">.</span><span class="n">add</span> <span class="p">{</span>
-    <span class="k">let</span> <span class="nv">topSeparator</span> <span class="o">=</span> <span class="kt">LoginUnits</span><span class="o">.</span><span class="kt">SpacerUnit</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="s">"top"</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">14</span><span class="p">)</span>
-    <span class="k">let</span> <span class="nv">header</span> <span class="o">=</span> <span class="kt">LoginUnits</span><span class="o">.</span><span class="kt">HeaderUnit</span><span class="p">()</span>
-    <span class="k">return</span> <span class="p">[</span><span class="n">topSeparator</span><span class="p">,</span> <span class="n">header</span><span class="p">]</span>
-<span class="p">}</span>
-<span class="n">units</span><span class="o">.</span><span class="n">add</span> <span class="p">{</span>
-    <span class="k">let</span> <span class="nv">username</span> <span class="o">=</span> <span class="kt">LoginUnits</span><span class="o">.</span><span class="kt">UsernameUnit</span><span class="p">(</span><span class="nv">current</span><span class="p">:</span> <span class="n">viewState</span><span class="o">.</span><span class="n">username</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="nf">updateUsername</span><span class="p">(</span><span class="nv">newUsername</span><span class="p">:))</span>
-    <span class="k">let</span> <span class="nv">password</span> <span class="o">=</span> <span class="kt">LoginUnits</span><span class="o">.</span><span class="kt">PasswordUnit</span><span class="p">(</span><span class="nv">current</span><span class="p">:</span> <span class="n">viewState</span><span class="o">.</span><span class="n">password</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="nf">updatePassword</span><span class="p">(</span><span class="nv">newPassword</span><span class="p">:))</span>
-    <span class="k">return</span> <span class="p">[</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">]</span>
-<span class="p">}</span>
-<span class="k">let</span> <span class="nv">continueButton</span> <span class="o">=</span> <span class="kt">LoginUnits</span><span class="o">.</span><span class="kt">ContinueButtonUnit</span><span class="p">(</span><span class="nv">enabled</span><span class="p">:</span> <span class="n">viewState</span><span class="o">.</span><span class="n">validData</span><span class="p">,</span> <span class="nv">callback</span><span class="p">:</span> <span class="n">doTryLogin</span><span class="p">)</span>
-<span class="n">units</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">continueButton</span><span class="p">)</span>
+<p>We provide two default containers in the framework: <code>ComposingCollectionView</code> and <code>ComposingTableView</code>. Both have <strong>automatic detection of inserts/updates/deletes</strong> in their state they are displaying.</p>
+<a href='#tests' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='tests'>Tests</h2>
 
-<span class="n">collectionView</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="n">units</span>
+<p>It gets really simple to test your interface, as you can test the presence of some specific unit, and you don&rsquo;t need to render your interface.</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">dummyItem</span> <span class="o">=</span> <span class="kt">FeedItem</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="k">var</span> <span class="nv">feedUnit</span> <span class="o">=</span> <span class="kt">FeedUnit</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">dummyItem</span><span class="p">)</span>
+<span class="kt">XCTAssert</span><span class="p">(</span><span class="n">feedUnit</span><span class="o">.</span><span class="n">units</span><span class="o">.</span><span class="n">count</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">dummyItem</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="kc">nil</span>
+<span class="n">dummyItem</span><span class="o">.</span><span class="n">video</span> <span class="o">=</span> <span class="kc">nil</span>
+<span class="n">feedUnit</span> <span class="o">=</span> <span class="kt">FeedUnit</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">dummyItem</span><span class="p">)</span>
+<span class="kt">XCTAssert</span><span class="p">(</span><span class="n">feedUnit</span><span class="o">.</span><span class="n">units</span><span class="o">.</span><span class="n">count</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span>
 </code></pre>
+<a href='#examples' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='examples'>Examples</h2>
 
-<p>Here, we can clearly see (and change if we want) the order each unit will be added to the array. Also, if any unit needed some business logic to check if it should be added to the array, we could easily do something like this:</p>
-<pre class="highlight swift"><code><span class="n">units</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">manyIfLet</span><span class="p">:</span> <span class="n">state</span><span class="o">.</span><span class="n">description</span><span class="p">)</span> <span class="p">{</span> <span class="n">text</span> <span class="k">in</span>
-    <span class="k">let</span> <span class="nv">header</span> <span class="o">=</span> <span class="kt">DetailViewUnits</span><span class="o">.</span><span class="kt">HeaderDescriptionUnit</span><span class="p">(</span><span class="nv">header</span><span class="p">:</span> <span class="s">"Description"</span><span class="p">)</span>
-    <span class="k">let</span> <span class="nv">description</span> <span class="o">=</span> <span class="kt">DetailViewUnits</span><span class="o">.</span><span class="kt">DescriptionUnit</span><span class="p">(</span><span class="nv">text</span><span class="p">:</span> <span class="n">text</span><span class="p">,</span> <span class="nv">expanded</span><span class="p">:</span> <span class="n">state</span><span class="o">.</span><span class="n">descriptionExpanded</span><span class="p">)</span>
-    <span class="k">return</span> <span class="p">[</span><span class="n">header</span><span class="p">,</span> <span class="n">description</span><span class="p">]</span>
-<span class="p">}</span>
-</code></pre>
+<p>We provide some cool examples in our <strong>Example project</strong>.</p>
 
-<p>So, if <code>state.description</code> is not nil, then we should display an header and description units. There are many operators for conditional checks, conditional closures, if/let unwrappers and more.</p>
-
-<p>If you got interested, there are many working examples inside the <strong>Example project</strong>.</p>
-<a href='#running-the-example-project' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h5 id='running-the-example-project'>Running the Example project</h5>
-
-<p>To run the example project, clone the repo, and open the xcode Project from the Example directory.</p>
+<p>To run, clone this repo, and open the <code>Example/Compose_Example.xcodeproj</code>. <strong>You don&rsquo;t need to do any pod install or any configuration to run this project</strong></p>
 <a href='#installation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='installation'>Installation</h2>
+<a href='#cocoapods' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='cocoapods'>Cocoapods</h4>
 
 <p>Compose is available through <a href="http://cocoapods.org">CocoaPods</a>. To install
 it, simply add the following line to your Podfile:</p>
 <pre class="highlight ruby"><code><span class="n">pod</span> <span class="s2">"Compose"</span>
 </code></pre>
+<a href='#manual' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='manual'>Manual</h4>
+
+<p>You can download this repo, drag the <code>Compose.xcodeproj</code> inside your project and link the <code>Compose</code> framework </p>
 <a href='#documentation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='documentation'>Documentation</h2>
 
 <p>You can find all documentation about Compose here: <a href="https://vivareal.github.io/Compose/index.html">Documentation</a></p>

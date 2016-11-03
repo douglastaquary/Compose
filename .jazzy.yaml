@@ -3,7 +3,7 @@ author: VivaReal
 author_url: https://github.com/vivareal
 module: Compose
 module_version: 1.0
-readme: Documentation/TMP/README.md
+readme: README.md
 documentation: Documentation/*.md
 github_url: http://github.com/vivareal/Compose
 theme: Documentation/jazzy-theme
