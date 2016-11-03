@@ -178,7 +178,8 @@
 <a href="http://codecov.io/github/vivareal/Compose"><img src="http://codecov.io/github/vivareal/Compose/coverage.svg" alt="codecov.io"></a>
 <a href="http://cocoapods.org/pods/Compose"><img src="https://img.shields.io/cocoapods/v/Compose.svg?style=flat" alt="Version"></a>
 <a href="http://cocoapods.org/pods/Compose"><img src="https://img.shields.io/cocoapods/p/Compose.svg" alt="Pod Platform"></a>
-<a href="https://github.com/vivareal/Compose/blob/master/LICENSE"><img src="https://img.shields.io/cocoapods/l/Compose.svg" alt="Pod License"></a></p>
+<a href="https://github.com/vivareal/Compose/blob/master/LICENSE"><img src="https://img.shields.io/cocoapods/l/Compose.svg" alt="Pod License"></a>
+<a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage Compatible"></a></p>
 <a href='#compose-is-a-data-driven-library-that-will-help-compose-your-complex-and-dynamic-views' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='compose-is-a-data-driven-library-that-will-help-compose-your-complex-and-dynamic-views'>Compose is a data driven library that will help compose your complex and dynamic Views.</h1>
 
 <p>It helps you create complex and dynamic Views using easy and simple composition of data structures. It is really easy to use and extend.</p>
@@ -298,9 +299,23 @@ Also, this class/structure <strong>should hold all the data that it will display
 <a href='#cocoapods' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='cocoapods'>Cocoapods</h4>
 
 <p>Compose is available through <a href="http://cocoapods.org">CocoaPods</a>. To install
-it, simply add the following line to your Podfile:</p>
+it, simply add the following line to your <code>Podfile</code>:</p>
 <pre class="highlight ruby"><code><span class="n">pod</span> <span class="s2">"Compose"</span>
 </code></pre>
+<a href='#carthage' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='carthage'>Carthage</h4>
+
+<p><a href="https://github.com/Carthage/Carthage">Carthage</a> is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.</p>
+
+<p>You can install Carthage with <a href="http://brew.sh/">Homebrew</a> using the following command:</p>
+<pre class="highlight shell"><code><span class="gp">$ </span>brew update
+<span class="gp">$ </span>brew install carthage
+</code></pre>
+
+<p>To integrate Compose into your Xcode project using Carthage, specify it in your <code>Cartfile</code>:</p>
+<pre class="highlight plaintext"><code>github "VivaReal/Compose" ~&gt; 1.0
+</code></pre>
+
+<p>Run <code>carthage update</code> to build the framework and drag the built <code>Compose.framework</code> into your Xcode project.</p>
 <a href='#manual' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='manual'>Manual</h4>
 
 <p>You can download this repo, drag the <code>Compose.xcodeproj</code> inside your project and link the <code>Compose</code> framework </p>

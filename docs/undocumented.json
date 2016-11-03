@@ -44,23 +44,23 @@
     },
     {
       "file": "/Users/bruno/Projects/Github/Compose/Compose/Classes/Views/ComposingCollectionView/ComposingCollectionView.swift",
+      "line": 78,
+      "symbol": "ComposingCollectionView.scrollDidChangeCallback",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/bruno/Projects/Github/Compose/Compose/Classes/Views/ComposingCollectionView/ComposingContainerDirection.swift",
       "line": 18,
       "symbol": "ComposingContainerDirection.verticalGrid",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/bruno/Projects/Github/Compose/Compose/Classes/Views/ComposingCollectionView/ComposingCollectionView.swift",
+      "file": "/Users/bruno/Projects/Github/Compose/Compose/Classes/Views/ComposingCollectionView/ComposingContainerDirection.swift",
       "line": 24,
       "symbol": "ComposingContainerDirection.horizontalGrid",
       "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/bruno/Projects/Github/Compose/Compose/Classes/Views/ComposingCollectionView/ComposingCollectionView.swift",
-      "line": 128,
-      "symbol": "ComposingCollectionView.scrollDidChangeCallback",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
