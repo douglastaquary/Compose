@@ -56,6 +56,7 @@
 		15BD91C41DCA9A250088AEB4 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = 15BD91C31DCA9A250088AEB4 /* .travis.yml */; };
 		15DC72EF1DAD5B5000FFBA9F /* ArrayAddTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DC72EE1DAD5B5000FFBA9F /* ArrayAddTests.swift */; };
 		15DC72F11DAD5B8900FFBA9F /* SizeUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DC72F01DAD5B8900FFBA9F /* SizeUnitTests.swift */; };
+		15FF5F931DCABDE000CF91CE /* ComposingContainerDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FF5F921DCABDE000CF91CE /* ComposingContainerDirection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +129,7 @@
 		15BD91C31DCA9A250088AEB4 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		15DC72EE1DAD5B5000FFBA9F /* ArrayAddTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayAddTests.swift; sourceTree = "<group>"; };
 		15DC72F01DAD5B8900FFBA9F /* SizeUnitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeUnitTests.swift; sourceTree = "<group>"; };
+		15FF5F921DCABDE000CF91CE /* ComposingContainerDirection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposingContainerDirection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -304,6 +306,7 @@
 				1529CB751DABD3320025874E /* ComposingCollectionView.swift */,
 				1529CB761DABD3320025874E /* ComposingCollectionViewDataSource.swift */,
 				1529CB771DABD3320025874E /* ComposingCollectionViewDelegate.swift */,
+				15FF5F921DCABDE000CF91CE /* ComposingContainerDirection.swift */,
 			);
 			path = ComposingCollectionView;
 			sourceTree = "<group>";
@@ -518,6 +521,7 @@
 				1529CB841DABD3320025874E /* CollectionStackUnit.swift in Sources */,
 				1529CB851DABD3320025874E /* ViewUnit.swift in Sources */,
 				1529CB8A1DABD3320025874E /* ComposingCollectionViewDataSource.swift in Sources */,
+				15FF5F931DCABDE000CF91CE /* ComposingContainerDirection.swift in Sources */,
 				1529CB881DABD3320025874E /* ComposingUnitCollectionViewCell.swift in Sources */,
 				15A137031DB846520047AD05 /* TableStackView.swift in Sources */,
 				154C4EAF1DB443D30099996C /* TwoStepDisplayUnit.swift in Sources */,
@@ -681,6 +685,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vivareal.Compose;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
