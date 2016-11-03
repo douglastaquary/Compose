@@ -91,7 +91,9 @@ public class ComposingCollectionView: UICollectionView, ComposingContainer {
     
     private lazy var stateChangeDiff: CollectionViewDiffCalculator<String> = {
         let diff = CollectionViewDiffCalculator<String>(collectionView: self)
-        diff.finishReorderingCallback = self.didFinishReorderingItems(changedSet:)
+        diff.finishReorderingCallback = { set in
+            self.didFinishReorderingItems(changedSet: set)
+        }
         return diff
     }()
     

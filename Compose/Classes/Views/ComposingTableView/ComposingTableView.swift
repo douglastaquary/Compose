@@ -28,7 +28,9 @@ public class ComposingTableView: UITableView, ComposingContainer {
 
     private lazy var stateChangeDiff: TableViewDiffCalculator<String> = {
         let diff = TableViewDiffCalculator<String>(tableView: self)
-        diff.finishReorderingCallback = self.didFinishReorderingItems(changedSet:)
+        diff.finishReorderingCallback = { set in
+            self.didFinishReorderingItems(changedSet: set)
+        }
         return diff
     }()
     
