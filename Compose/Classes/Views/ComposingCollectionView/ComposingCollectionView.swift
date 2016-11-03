@@ -137,9 +137,10 @@ public class ComposingCollectionView: UICollectionView, ComposingContainer {
             guard let indexPath = self.indexPath(for: cell), !changedSet.contains(indexPath.row) else { return nil }
             return (cell, indexPath.item)
         }
-        cellsWithIndexPath.flatMap { (cell, index) in
+        let cellsWithUnits: [(UICollectionViewCell, ComposingUnit)] = cellsWithIndexPath.flatMap { (cell, index) in
             return (cell, self.internalSource[index])
-        }.forEach { (cell, unit) in
+        }
+        cellsWithUnits.forEach { (cell, unit) in
             unit.configure(view: cell)
         }
     }
