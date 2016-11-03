@@ -112,7 +112,6 @@
 		15A136F31DB701770047AD05 /* ComposingUnit API.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "ComposingUnit API.md"; sourceTree = "<group>"; };
 		15A136F51DB702550047AD05 /* Building UI.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; lineEnding = 0; path = "Building UI.md"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.markdown; };
 		15A136FB1DB7069F0047AD05 /* .jazzy.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .jazzy.yaml; sourceTree = "<group>"; };
-		15A136FE1DB709ED0047AD05 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		15A137021DB846520047AD05 /* TableStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableStackView.swift; sourceTree = "<group>"; };
 		15A1372D1DB927C70047AD05 /* UIEdgeInsetsExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIEdgeInsetsExtensionTests.swift; sourceTree = "<group>"; };
 		15A1372E1DB927C70047AD05 /* UIViewExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensionTests.swift; sourceTree = "<group>"; };
@@ -366,20 +365,11 @@
 		15A136F01DB6FF0F0047AD05 /* Documentation */ = {
 			isa = PBXGroup;
 			children = (
-				15A136FD1DB709ED0047AD05 /* TMP */,
 				15A136F11DB6FF0F0047AD05 /* Introduction.md */,
 				15A136F31DB701770047AD05 /* ComposingUnit API.md */,
 				15A136F51DB702550047AD05 /* Building UI.md */,
 			);
 			path = Documentation;
-			sourceTree = "<group>";
-		};
-		15A136FD1DB709ED0047AD05 /* TMP */ = {
-			isa = PBXGroup;
-			children = (
-				15A136FE1DB709ED0047AD05 /* README.md */,
-			);
-			path = TMP;
 			sourceTree = "<group>";
 		};
 		15A137351DB928D80047AD05 /* mock */ = {

@@ -1,8 +1,9 @@
-[![Build Status](https://travis-ci.org/VivaReal/Compose.svg?branch=master)](https://travis-ci.org/VivaReal/Compose)
-[![codecov](https://codecov.io/gh/VivaReal/Compose/branch/master/graph/badge.svg)](https://codecov.io/gh/VivaReal/Compose)
-[![Version](https://img.shields.io/cocoapods/v/Compose.svg?style=flat)](http://cocoapods.org/pods/Compose)
 [![Pod Platform](https://img.shields.io/cocoapods/p/Compose.svg)](http://cocoapods.org/pods/Compose)
+[![Language](https://img.shields.io/badge/Swift-3.0-blue.svg)](https://img.shields.io/badge/Swift-3.0-blue.svg)
+[![Build Status](https://travis-ci.org/VivaReal/Compose.svg?branch=master)](https://travis-ci.org/VivaReal/Compose)
 [![Pod License](https://img.shields.io/cocoapods/l/Compose.svg)](https://github.com/vivareal/Compose/blob/master/LICENSE)
+
+[![Version](https://img.shields.io/cocoapods/v/Compose.svg?style=flat)](http://cocoapods.org/pods/Compose)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 # Compose is a data driven library that will help compose your complex and dynamic Views.
