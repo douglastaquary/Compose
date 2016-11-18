@@ -1,7 +1,9 @@
 language: objective-c
-osx_image: xcode8
-script:
-  - travis_retry xcodebuild clean test -project Compose.xcodeproj -scheme Compose -destination "platform=iOS Simulator,name=iPhone 7" -configuration Debug ONLY_ACTIVE_ARCH=NO
+osx_image: xcode8.1 
+before_install:
+  - gem install bundler
 
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
+script:
+ - bundle install
+ - bundle exec fastlane validate_pr 
+ - bundle exec danger

@@ -1,0 +1,21 @@
+machine:
+  xcode:
+    version: 8.1       
+test:
+  override:
+    - bundle exec fastlane validate_pr 
+    - bundle exec danger 
+
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - git clean -dfx
+      - git config user.name "Viva user CI"
+      - git config user.email "ios-ci@vivareal.com"
+      - bundle exec fastlane tag
+
+
+
+
