@@ -108,6 +108,9 @@
 		154C4EB91DB5A4E40099996C /* ComposingTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposingTableViewDataSource.swift; sourceTree = "<group>"; };
 		154D51EF1DB5AF69008B748D /* ComposingTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposingTableViewDelegate.swift; sourceTree = "<group>"; };
 		154D51F11DB5B1EB008B748D /* ComposingDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposingDataSource.swift; sourceTree = "<group>"; };
+		155178251DE652CE00D9D106 /* Fastfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Fastfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		155178261DE652CE00D9D106 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		155178271DE652CE00D9D106 /* report.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = report.xml; sourceTree = "<group>"; };
 		15A136F11DB6FF0F0047AD05 /* Introduction.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Introduction.md; sourceTree = "<group>"; };
 		15A136F31DB701770047AD05 /* ComposingUnit API.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "ComposingUnit API.md"; sourceTree = "<group>"; };
 		15A136F51DB702550047AD05 /* Building UI.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; lineEnding = 0; path = "Building UI.md"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.markdown; };
@@ -153,6 +156,7 @@
 		1529CB381DABD2DD0025874E = {
 			isa = PBXGroup;
 			children = (
+				155178241DE652CE00D9D106 /* fastlane */,
 				15A136F01DB6FF0F0047AD05 /* Documentation */,
 				152EBE621DB00A0600036F17 /* Compose Metadata */,
 				1529CB441DABD2DD0025874E /* Compose */,
@@ -360,6 +364,16 @@
 				154D51EF1DB5AF69008B748D /* ComposingTableViewDelegate.swift */,
 			);
 			path = ComposingTableView;
+			sourceTree = "<group>";
+		};
+		155178241DE652CE00D9D106 /* fastlane */ = {
+			isa = PBXGroup;
+			children = (
+				155178251DE652CE00D9D106 /* Fastfile */,
+				155178261DE652CE00D9D106 /* README.md */,
+				155178271DE652CE00D9D106 /* report.xml */,
+			);
+			path = fastlane;
 			sourceTree = "<group>";
 		};
 		15A136F01DB6FF0F0047AD05 /* Documentation */ = {
