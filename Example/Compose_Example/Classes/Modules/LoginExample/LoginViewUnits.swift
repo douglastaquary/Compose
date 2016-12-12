@@ -16,6 +16,7 @@ struct LoginUnits {
     
     static func HeaderUnit()-> ComposingUnit {
         let labelTraits: [ViewTraits] = [.height(80), .insets(UIEdgeInsets(horizontal: 16))]
+                
         let loginHeader = ViewUnit<UILabel>(id: "header", traits: labelTraits) { (label) in
             let subheaderAttributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 14, weight: UIFontWeightLight), NSForegroundColorAttributeName: UIColor(white: 0.3, alpha: 1)]
             let headerAttributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 30, weight: UIFontWeightBold), NSForegroundColorAttributeName: UIColor(white: 0.1, alpha: 1)]
