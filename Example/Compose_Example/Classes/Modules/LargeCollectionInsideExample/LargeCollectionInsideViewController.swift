@@ -15,6 +15,12 @@ class LargeCollectionInsideViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         insideView.viewState = createNewState()
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "scroll", style: .plain, target: self, action: #selector(scrollToRandomElement))
+    }
+    
+    func scrollToRandomElement() {
+        let unit = LargeCollectionInsideViewUnits.SpacerUnit(id: "bottom-separator")
+        insideView.container.scroll(to: unit, at: .top)
     }
     
     private func createNewState()-> LargeCollectionInsideViewState {
