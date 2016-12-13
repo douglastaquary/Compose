@@ -12,5 +12,5 @@ func randomColors(maxColors: Int)-> [UIColor] {
     let colors: [UIColor] = [.red, .green, .blue, .magenta, .yellow, .purple, .darkGray, .cyan, .orange, .brown, .lightGray, .gray, .black]
     let colorsCount = UInt32(colors.count)
     let numberOfColors = Int(arc4random_uniform(UInt32(maxColors))) + 1
-    return (0 ..< numberOfColors).map { _ in return colors[Int(arc4random_uniform(UInt32(colorsCount)))] }
+    return (0 ..< numberOfColors).map { _ in return colors[Int(arc4random_uniform(colorsCount))] }
 }

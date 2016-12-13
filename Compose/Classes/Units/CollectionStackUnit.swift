@@ -56,7 +56,7 @@ public struct CollectionStackUnit: ComposingUnit, ContainerUnit, TwoStepDisplayU
     
     public func beforeDisplay(view: UIView) {
         guard let cell = view as? Cell else { return }
-        let cellWidth = view.superview!.frame.width
+        let cellWidth = min(cell.frame.width, cell.superview!.frame.width)
         let cellHeight = min(cell.frame.height, cell.superview!.frame.height)
         cell.containerSize = CGSize(width: cellWidth, height: cellHeight)
     }
@@ -110,7 +110,7 @@ public struct CollectionStackUnit: ComposingUnit, ContainerUnit, TwoStepDisplayU
                 let width = self.units.reduce(CGFloat(0.0), { (total, unit) -> CGFloat in
                     return total + unit.widthUnit.value(for: size)
                 })
-                return min(width, size.width)
+                return width
             }
         case let .horizontalGrid(rows):
             return DimensionUnit { size in

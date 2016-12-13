@@ -11,8 +11,8 @@ import UIKit
 /// Generic cell that encapsulates another view inside it. You can use it to fast embed other views inside a UICollectionViewCell.
 public class ComposingUnitCollectionViewCell<V: UIView>: UICollectionViewCell {
     
-    private var centerXConstraint: NSLayoutConstraint!
-    private var centerYConstraint: NSLayoutConstraint!
+    private var leadingConstraint: NSLayoutConstraint!
+    private var topConstraint: NSLayoutConstraint!
     private var widthConstraint: NSLayoutConstraint!
     private var heightConstraint: NSLayoutConstraint!
     
@@ -39,11 +39,11 @@ public class ComposingUnitCollectionViewCell<V: UIView>: UICollectionViewCell {
         self.innerView.translatesAutoresizingMaskIntoConstraints = false
         let toView = self
         guard let itemView = self.innerView else { return }
-        centerXConstraint = NSLayoutConstraint(item: itemView, attribute: .centerX, relatedBy: .equal, toItem: toView, attribute: .centerX, multiplier: 1, constant: 0)
-        centerYConstraint = NSLayoutConstraint(item: itemView, attribute: .centerY, relatedBy: .equal, toItem: toView, attribute: .centerY, multiplier: 1, constant: 0)
+        leadingConstraint = NSLayoutConstraint(item: itemView, attribute: .leading, relatedBy: .equal, toItem: toView, attribute: .leading, multiplier: 1, constant: 0)
+        topConstraint = NSLayoutConstraint(item: itemView, attribute: .top, relatedBy: .equal, toItem: toView, attribute: .top, multiplier: 1, constant: 0)
         widthConstraint = NSLayoutConstraint(item: itemView, attribute: .width, relatedBy: .equal, toItem: toView, attribute: .width, multiplier: 1, constant: 0)
         heightConstraint = NSLayoutConstraint(item: itemView, attribute: .height, relatedBy: .equal, toItem: toView, attribute: .height, multiplier: 1, constant: 0)
-        toView.addConstraints([centerXConstraint, centerYConstraint, widthConstraint, heightConstraint])
+        toView.addConstraints([leadingConstraint, topConstraint, widthConstraint, heightConstraint])
     }
     
     /// You can apply some ViewTraits to the collectionViewCell, in order to configure it
@@ -75,6 +75,8 @@ public class ComposingUnitCollectionViewCell<V: UIView>: UICollectionViewCell {
     
     private func update(insets: UIEdgeInsets, animated: Bool = false) {
         let closure = {
+            self.leadingConstraint.constant = insets.left
+            self.topConstraint.constant = insets.top
             self.widthConstraint.constant = insets.horizontalInsets * -1
             self.heightConstraint.constant = insets.verticalInsets * -1
         }

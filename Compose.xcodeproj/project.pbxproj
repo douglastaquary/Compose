@@ -39,6 +39,7 @@
 		154C4EBA1DB5A4E40099996C /* ComposingTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154C4EB91DB5A4E40099996C /* ComposingTableViewDataSource.swift */; };
 		154D51F01DB5AF69008B748D /* ComposingTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154D51EF1DB5AF69008B748D /* ComposingTableViewDelegate.swift */; };
 		154D51F21DB5B1EB008B748D /* ComposingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154D51F11DB5B1EB008B748D /* ComposingDataSource.swift */; };
+		15A1105B1DF7970B00FFB819 /* UIViewUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A1105A1DF7970B00FFB819 /* UIViewUnit.swift */; };
 		15A136FC1DB7069F0047AD05 /* .jazzy.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 15A136FB1DB7069F0047AD05 /* .jazzy.yaml */; };
 		15A137031DB846520047AD05 /* TableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A137021DB846520047AD05 /* TableStackView.swift */; };
 		15A137311DB927C70047AD05 /* UIEdgeInsetsExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A1372D1DB927C70047AD05 /* UIEdgeInsetsExtensionTests.swift */; };
@@ -111,6 +112,7 @@
 		155178251DE652CE00D9D106 /* Fastfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Fastfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		155178261DE652CE00D9D106 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		155178271DE652CE00D9D106 /* report.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = report.xml; sourceTree = "<group>"; };
+		15A1105A1DF7970B00FFB819 /* UIViewUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewUnit.swift; sourceTree = "<group>"; };
 		15A136F11DB6FF0F0047AD05 /* Introduction.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Introduction.md; sourceTree = "<group>"; };
 		15A136F31DB701770047AD05 /* ComposingUnit API.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "ComposingUnit API.md"; sourceTree = "<group>"; };
 		15A136F51DB702550047AD05 /* Building UI.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; lineEnding = 0; path = "Building UI.md"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.markdown; };
@@ -261,6 +263,7 @@
 				1529CB6B1DABD3320025874E /* CollectionStackUnit.swift */,
 				1529CB6C1DABD3320025874E /* ViewUnit.swift */,
 				154C4EB01DB44BEE0099996C /* LabelUnit.swift */,
+				15A1105A1DF7970B00FFB819 /* UIViewUnit.swift */,
 			);
 			path = Units;
 			sourceTree = "<group>";
@@ -524,6 +527,7 @@
 				152EBE611DB0037400036F17 /* CollectionStackView.swift in Sources */,
 				1529CB841DABD3320025874E /* CollectionStackUnit.swift in Sources */,
 				1529CB851DABD3320025874E /* ViewUnit.swift in Sources */,
+				15A1105B1DF7970B00FFB819 /* UIViewUnit.swift in Sources */,
 				1529CB8A1DABD3320025874E /* ComposingCollectionViewDataSource.swift in Sources */,
 				15FF5F931DCABDE000CF91CE /* ComposingContainerDirection.swift in Sources */,
 				1529CB881DABD3320025874E /* ComposingUnitCollectionViewCell.swift in Sources */,
