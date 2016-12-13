@@ -97,6 +97,9 @@ public class ComposingCollectionView: UICollectionView, ComposingContainer {
         return diff
     }()
     
+    /// Callback that will be invoked everytime the collection view finished updating it's state
+    public var didFinishUpdateStateCallback: (()-> Void)?
+    
     /// Convenience init that uses .zero frame and default layout
     public convenience init() {
         self.init(frame: .zero)
@@ -129,6 +132,27 @@ public class ComposingCollectionView: UICollectionView, ComposingContainer {
         commonInit()
     }
     
+    
+    /// Return the indexPath for this unit if it is inside the collectionView state
+    ///
+    /// - Parameter unit: the unit to find the index
+    /// - Returns: an optional IndexPath, in case the unit is inside the collectionView state
+    public func indexPath(for unit: ComposingUnit)-> IndexPath? {
+        return self.composeDataSource.indexPath(for: unit)
+    }
+    
+    
+    /// Scroll to a specific unit, with a given position, and animated
+    ///
+    /// - Parameters:
+    ///   - unit: the unit to scroll to
+    ///   - scrollPosition: the desired position of the unit
+    ///   - animated: should this be animated
+    public func scroll(to unit: ComposingUnit, at scrollPosition: UICollectionViewScrollPosition, animated: Bool = true) {
+        guard let indexPath = self.indexPath(for: unit) else { return }
+        self.scrollToItem(at: indexPath, at: scrollPosition, animated: animated)
+    }
+    
     private func commonInit() {
         self.dataSource = composeDataSource
         self.delegate = composeDelegate
@@ -145,6 +169,7 @@ public class ComposingCollectionView: UICollectionView, ComposingContainer {
         cellsWithUnits.forEach { (cell, unit) in
             unit.configure(view: cell)
         }
+        self.didFinishUpdateStateCallback?()
     }
     
 }

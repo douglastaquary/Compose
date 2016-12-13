@@ -13,4 +13,6 @@ protocol ContainerUnit: ComposingUnit {
 
     func scrollviewFrom(view: UIView)-> UIScrollView
     
+    var direction: ComposingContainerDirection { get }
+    
 }

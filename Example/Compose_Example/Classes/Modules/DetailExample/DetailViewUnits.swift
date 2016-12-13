@@ -20,11 +20,11 @@ struct DetailViewUnits {
     }
     
     static func DescriptionUnit(text: String, expanded: Bool)-> ComposingUnit {
-        return LabelUnit(id: "description", text: text, font: UIFont.systemFont(ofSize: 14, weight: UIFontWeightLight), color: .gray, background: .clear, maxHeight: expanded ? -1 : 160)
+        return LabelUnit(id: "description", text: text, font: UIFont.systemFont(ofSize: 14, weight: UIFontWeightLight), color: .gray, backgroundColor: .clear, maxHeight: expanded ? nil : 160)
     }
     
     static func HeaderDescriptionUnit(header: String)-> ComposingUnit {
-        return LabelUnit(id: "description-header", text: header, font: UIFont.systemFont(ofSize: 18, weight: UIFontWeightMedium), color: .darkGray, background: .clear)
+        return LabelUnit(id: "description-header", text: header, font: UIFont.systemFont(ofSize: 18, weight: UIFontWeightMedium), color: .darkGray, backgroundColor: .clear)
     }
     
     static func ExpandDescriptionUnit(callback:@escaping ()->Void)-> ComposingUnit {

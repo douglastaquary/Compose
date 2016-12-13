@@ -15,18 +15,14 @@ struct LoginUnits {
     typealias ActionCallback = ()-> Void
     
     static func HeaderUnit()-> ComposingUnit {
-        let labelTraits: [ViewTraits] = [.height(80), .insets(UIEdgeInsets(horizontal: 16))]
-                
-        let loginHeader = ViewUnit<UILabel>(id: "header", traits: labelTraits) { (label) in
-            let subheaderAttributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 14, weight: UIFontWeightLight), NSForegroundColorAttributeName: UIColor(white: 0.3, alpha: 1)]
-            let headerAttributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 30, weight: UIFontWeightBold), NSForegroundColorAttributeName: UIColor(white: 0.1, alpha: 1)]
-            let subHeaderAttributedString = NSAttributedString(string: "\nProvide your login details bellow", attributes: subheaderAttributes)
-            let headerAttributedString = NSMutableAttributedString(string: "Login", attributes: headerAttributes)
-            headerAttributedString.append(subHeaderAttributedString)
-            label.attributedText = headerAttributedString
-            label.numberOfLines = 0
-        }
-        return loginHeader
+        let headerInsets = UIEdgeInsets(top: 0, left: 16, bottom: 8, right: 16)
+        let subheaderAttributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 14, weight: UIFontWeightLight), NSForegroundColorAttributeName: UIColor(white: 0.3, alpha: 1)]
+        let headerAttributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 30, weight: UIFontWeightBold), NSForegroundColorAttributeName: UIColor(white: 0.1, alpha: 1)]
+        let subHeaderAttributedString = NSAttributedString(string: "\nProvide your login details bellow", attributes: subheaderAttributes)
+        let headerAttributedString = NSMutableAttributedString(string: "Login", attributes: headerAttributes)
+        headerAttributedString.append(subHeaderAttributedString)
+        let header = LabelUnit(id: "header", text: headerAttributedString, backgroundColor: .clear, insets: headerInsets)
+        return header
     }
     
     static func UsernameUnit(current username: String?, callback: @escaping StringUpdate)-> ComposingUnit {

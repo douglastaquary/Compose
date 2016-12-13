@@ -35,6 +35,32 @@ public enum ComposingContainerDirection: Equatable {
         }
     }
     
+    func sameAxis(as direction: ComposingContainerDirection)-> Bool {
+        return (self.isVertical && direction.isVertical) || (self.isHorizontal && direction.isHorizontal)
+    }
+    
+    var isVertical: Bool {
+        switch self {
+        case .vertical:
+            fallthrough
+        case .verticalGrid:
+            return true
+        default:
+            return false
+        }
+    }
+    
+    var isHorizontal: Bool {
+        switch self {
+        case .horizontal:
+            fallthrough
+        case .horizontalGrid:
+            return true
+        default:
+            return false
+        }
+    }
+    
     var collectionDirection: UICollectionViewScrollDirection {
         switch self {
         case .vertical, .verticalGrid:

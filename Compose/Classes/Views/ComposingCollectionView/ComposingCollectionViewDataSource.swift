@@ -21,6 +21,15 @@ class ComposingCollectionViewDataSource: NSObject, UICollectionViewDataSource {
         return source.numberOfUnits()
     }
     
+    func indexPath(for unit: ComposingUnit)-> IndexPath? {
+        if let index = source.state.index(where: { $0.identifier == unit.identifier }) {
+            return IndexPath(item: index, section: 0)
+        }
+        else {
+            return nil
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let unit = source[indexPath.item]
         let reuseIdentifier = unit.reuseIdentifier()

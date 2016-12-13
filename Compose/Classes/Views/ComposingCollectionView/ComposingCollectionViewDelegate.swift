@@ -46,15 +46,17 @@ class ComposingCollectionViewDelegate: NSObject, UICollectionViewDelegateFlowLay
         case let .verticalGrid(columns):
             let totalSeparator = CGFloat(max(columns - 1, 0)) * spaces.item
             size.width = floor((size.width - totalSeparator) / CGFloat(columns))
-            fallthrough
+            size.height = unit.heightUnit.value(for: size)
         case .vertical:
             size.height = unit.heightUnit.value(for: size)
+            size.width = max(size.width, unit.widthUnit.value(for: size))
         case let .horizontalGrid(rows):
             let totalSeparator = CGFloat(max(rows - 1, 0)) * spaces.item
             size.height = floor((size.height - totalSeparator) / CGFloat(rows))
-            fallthrough
+            size.width = unit.widthUnit.value(for: size)
         case .horizontal:
             size.width = unit.widthUnit.value(for: size)
+            size.height = max(size.height, unit.heightUnit.value(for: size))
         }
         return size
     }
@@ -66,8 +68,15 @@ class ComposingCollectionViewDelegate: NSObject, UICollectionViewDelegateFlowLay
         }
         if let container = unit as? ContainerUnit {
             let scrollView = container.scrollviewFrom(view: cell)
-            scrollView.isScrollEnabled = false
-            scrollView.bounces = false
+            
+            if self.direction.sameAxis(as: container.direction) {
+                scrollView.isScrollEnabled = false
+                scrollView.bounces = false
+            }
+            else {
+                scrollView.isScrollEnabled = true
+                scrollView.bounces = true   
+            }
             if cell.frame.height > collectionView.frame.height {
                 visibleContainers[scrollView] = cell.frame.origin.y
             }

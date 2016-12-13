@@ -16,7 +16,8 @@ public struct LabelUnit: ComposingUnit, TwoStepDisplayUnit {
     let numberOfLines: Int
     let backgroundColor: UIColor
     let attributedText: NSAttributedString
-    private let maxHeight: CGFloat
+    private let maxHeight: CGFloat?
+    public let insets: UIEdgeInsets
     public let identifier: String
     
     /// Common Init
@@ -27,14 +28,20 @@ public struct LabelUnit: ComposingUnit, TwoStepDisplayUnit {
     /// - parameter color:         text color
     /// - parameter background:    cell background color
     /// - parameter numberOfLines: number of lines to use
-    public init(id: String, text: String?, font: UIFont, color: UIColor, background: UIColor, maxHeight: CGFloat = -1, numberOfLines: Int = 0) {
+    public init(id: String, text: String?, font: UIFont, color: UIColor, backgroundColor: UIColor, maxHeight: CGFloat? = nil, insets: UIEdgeInsets = UIEdgeInsets(horizontal: 16), numberOfLines: Int = 0) {
+        let attributes = [NSFontAttributeName: font, NSForegroundColorAttributeName: color]
+        let attributed = NSAttributedString(string: text ?? "", attributes: attributes)
+        self.init(id: id, text: attributed, backgroundColor: backgroundColor, maxHeight: maxHeight, insets: insets, numberOfLines: numberOfLines)
+        
+    }
+    
+    public init(id: String, text: NSAttributedString, backgroundColor: UIColor, maxHeight: CGFloat? = nil, insets: UIEdgeInsets = UIEdgeInsets(horizontal: 16), numberOfLines: Int = 0) {
         self.identifier = id
         self.maxHeight = maxHeight
-        self.backgroundColor = background
+        self.insets = insets
+        self.backgroundColor = backgroundColor
         self.numberOfLines = numberOfLines
-        let attributes = [NSFontAttributeName: font, NSForegroundColorAttributeName: color]
-        self.attributedText = NSAttributedString(string: text ?? "", attributes: attributes)
-        
+        self.attributedText = text
     }
     
     /// Configure this UILabel with the given attributes
@@ -42,7 +49,7 @@ public struct LabelUnit: ComposingUnit, TwoStepDisplayUnit {
     /// - parameter view: the label to be configured
     public func configure(view: UIView) {
         guard let cell = view as? Cell else { return }
-        cell.insets = UIEdgeInsets(horizontal: 16)
+        cell.insets = self.insets
         cell.innerView.numberOfLines = self.numberOfLines
         cell.backgroundColor = backgroundColor
     }
@@ -60,14 +67,13 @@ public struct LabelUnit: ComposingUnit, TwoStepDisplayUnit {
         return DimensionUnit { size in
             let options: NSStringDrawingOptions = self.numberOfLines != 1 ? .usesLineFragmentOrigin : []
             let fitRect = self.attributedText.boundingRect(with: size, options: options, context: nil)
-            let textHeight = fitRect.height + 4
-            if self.maxHeight < 0 {
-                return textHeight
+            let textHeight = round(fitRect.height) + self.insets.verticalInsets + 2
+            if let maxHeight = self.maxHeight {
+                return min(maxHeight, textHeight)
             }
             else {
-                return min(self.maxHeight, textHeight)
+                return textHeight
             }
-            
         }
     }
     
