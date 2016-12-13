@@ -40,7 +40,6 @@
 		154D51F01DB5AF69008B748D /* ComposingTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154D51EF1DB5AF69008B748D /* ComposingTableViewDelegate.swift */; };
 		154D51F21DB5B1EB008B748D /* ComposingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 154D51F11DB5B1EB008B748D /* ComposingDataSource.swift */; };
 		15A1105B1DF7970B00FFB819 /* UIViewUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A1105A1DF7970B00FFB819 /* UIViewUnit.swift */; };
-		15A1105D1DF797E200FFB819 /* UIViewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A1105C1DF797E200FFB819 /* UIViewCollectionViewCell.swift */; };
 		15A136FC1DB7069F0047AD05 /* .jazzy.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 15A136FB1DB7069F0047AD05 /* .jazzy.yaml */; };
 		15A137031DB846520047AD05 /* TableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A137021DB846520047AD05 /* TableStackView.swift */; };
 		15A137311DB927C70047AD05 /* UIEdgeInsetsExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15A1372D1DB927C70047AD05 /* UIEdgeInsetsExtensionTests.swift */; };
@@ -114,7 +113,6 @@
 		155178261DE652CE00D9D106 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		155178271DE652CE00D9D106 /* report.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = report.xml; sourceTree = "<group>"; };
 		15A1105A1DF7970B00FFB819 /* UIViewUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewUnit.swift; sourceTree = "<group>"; };
-		15A1105C1DF797E200FFB819 /* UIViewCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewCollectionViewCell.swift; sourceTree = "<group>"; };
 		15A136F11DB6FF0F0047AD05 /* Introduction.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Introduction.md; sourceTree = "<group>"; };
 		15A136F31DB701770047AD05 /* ComposingUnit API.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "ComposingUnit API.md"; sourceTree = "<group>"; };
 		15A136F51DB702550047AD05 /* Building UI.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; lineEnding = 0; path = "Building UI.md"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.markdown; };
@@ -304,7 +302,6 @@
 			children = (
 				1529CB731DABD3320025874E /* ComposingUnitCollectionViewCell.swift */,
 				151715AF1DC14B8F008C0797 /* CollectionStackContainerCollectionViewCell.swift */,
-				15A1105C1DF797E200FFB819 /* UIViewCollectionViewCell.swift */,
 			);
 			path = CollectionViewCell;
 			sourceTree = "<group>";
@@ -519,7 +516,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1529CB7C1DABD3320025874E /* ComposingContainer.swift in Sources */,
-				15A1105D1DF797E200FFB819 /* UIViewCollectionViewCell.swift in Sources */,
 				1529CB8B1DABD3320025874E /* ComposingCollectionViewDelegate.swift in Sources */,
 				151715B01DC14B8F008C0797 /* CollectionStackContainerCollectionViewCell.swift in Sources */,
 				1529CB7F1DABD3320025874E /* ViewTraits.swift in Sources */,
