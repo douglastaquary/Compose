@@ -23,6 +23,7 @@ public class ComposingCollectionView: UICollectionView, ComposingContainer {
                 self.performBatchUpdates({ 
                     (self.collectionViewLayout as? UICollectionViewFlowLayout)?.scrollDirection = newValue.collectionDirection
                 })
+                self.updateBounces()
             }
         }
     }
@@ -156,6 +157,12 @@ public class ComposingCollectionView: UICollectionView, ComposingContainer {
     private func commonInit() {
         self.dataSource = composeDataSource
         self.delegate = composeDelegate
+        self.updateBounces()
+    }
+    
+    private func updateBounces() {
+        self.alwaysBounceVertical = direction.isVertical
+        self.alwaysBounceHorizontal = direction.isHorizontal
     }
 
     private func didFinishReorderingItems(changedSet: Set<Int>) {
@@ -170,6 +177,12 @@ public class ComposingCollectionView: UICollectionView, ComposingContainer {
             unit.configure(view: cell)
         }
         self.didFinishUpdateStateCallback?()
+    }
+    
+    public override func layoutSubviews() {
+        UIView.performWithoutAnimation { 
+            super.layoutSubviews()
+        }
     }
     
 }
