@@ -16,6 +16,8 @@ class CollectionStackContainerCollectionViewCell: UICollectionViewCell {
     
     private var widthConstraint: NSLayoutConstraint!
     private var heightConstraint: NSLayoutConstraint!
+    private var leadingConstraint: NSLayoutConstraint!
+    private var topConstraint: NSLayoutConstraint!
     
     var containerSize: CGSize {
         get {
@@ -28,7 +30,9 @@ class CollectionStackContainerCollectionViewCell: UICollectionViewCell {
     }
     
     override public init(frame: CGRect) {
-        self.innerView = ComposingCollectionView(frame: frame)
+        var innerFrame = frame
+        innerFrame.origin = .zero
+        self.innerView = ComposingCollectionView(frame: innerFrame)
         super.init(frame: frame)
         commonInit(frame: frame)
     }
@@ -46,8 +50,13 @@ class CollectionStackContainerCollectionViewCell: UICollectionViewCell {
     }
     
     private func addConstraints() {
+        let toView = self
+        let itemView = self.innerView
+        leadingConstraint = NSLayoutConstraint(item: itemView, attribute: .leading, relatedBy: .equal, toItem: toView, attribute: .leading, multiplier: 1, constant: 0)
+        topConstraint = NSLayoutConstraint(item: itemView, attribute: .top, relatedBy: .equal, toItem: toView, attribute: .top, multiplier: 1, constant: 0)
         widthConstraint = NSLayoutConstraint(item: self.innerView, attribute: .width, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: .width, multiplier: 1, constant: 0)
         heightConstraint = NSLayoutConstraint(item: self.innerView, attribute: .height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: .height, multiplier: 1, constant: 0)
+        toView.addConstraints([leadingConstraint, topConstraint])
         self.innerView.addConstraints([widthConstraint, heightConstraint])
     }
     
