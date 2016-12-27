@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name                   = 'Compose'
-  s.version                = '1.2.2'
+  s.version                = '1.2.3'
   s.summary                = 'Stop dealing with dataSources and delegates. Use compose to create your collectionView/tableView.'
   s.description            = <<-DESC
 Compose is a data-driven library that will help encapsulate and isolate all the information needed to display a view inside some container (UICollectionView/UITableView), so you don't need to handle with all dataSource/delegate methods. 
