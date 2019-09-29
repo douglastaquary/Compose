@@ -47,7 +47,7 @@ public class ComposingTableView: UITableView, ComposingContainer {
     }
     
     /// Select animation behavior for inserting new items to the array
-    public var insertionAnimation: UITableViewRowAnimation {
+    public var insertionAnimation: UITableView.RowAnimation {
         get {
             return stateChangeDiff.insertionAnimation
         }
@@ -57,7 +57,7 @@ public class ComposingTableView: UITableView, ComposingContainer {
     }
     
     /// Select animation behavior for deleting new items to the array
-    public var deletionAnimation: UITableViewRowAnimation {
+    public var deletionAnimation: UITableView.RowAnimation {
         get {
             return stateChangeDiff.deletionAnimation
         }
@@ -82,7 +82,7 @@ public class ComposingTableView: UITableView, ComposingContainer {
     ///
     /// - parameter frame:  initial view frame
     /// - parameter style: tableView Style
-    override public init(frame: CGRect, style: UITableViewStyle) {
+    override public init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
         commonInit()
     }

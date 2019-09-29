@@ -61,7 +61,7 @@ public enum ComposingContainerDirection: Equatable {
         }
     }
     
-    var collectionDirection: UICollectionViewScrollDirection {
+    var collectionDirection: UICollectionView.ScrollDirection {
         switch self {
         case .vertical, .verticalGrid:
             return .vertical

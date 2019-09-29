@@ -54,8 +54,8 @@ class CollectionStackContainerCollectionViewCell: UICollectionViewCell {
         let itemView = self.innerView
         leadingConstraint = NSLayoutConstraint(item: itemView, attribute: .leading, relatedBy: .equal, toItem: toView, attribute: .leading, multiplier: 1, constant: 0)
         topConstraint = NSLayoutConstraint(item: itemView, attribute: .top, relatedBy: .equal, toItem: toView, attribute: .top, multiplier: 1, constant: 0)
-        widthConstraint = NSLayoutConstraint(item: self.innerView, attribute: .width, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: .width, multiplier: 1, constant: 0)
-        heightConstraint = NSLayoutConstraint(item: self.innerView, attribute: .height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: .height, multiplier: 1, constant: 0)
+        widthConstraint = NSLayoutConstraint(item: self.innerView, attribute: .width, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: .width, multiplier: 1, constant: 0)
+        heightConstraint = NSLayoutConstraint(item: self.innerView, attribute: .height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: .height, multiplier: 1, constant: 0)
         toView.addConstraints([leadingConstraint, topConstraint])
         self.innerView.addConstraints([widthConstraint, heightConstraint])
     }

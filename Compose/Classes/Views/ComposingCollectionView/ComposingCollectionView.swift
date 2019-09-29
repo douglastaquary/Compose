@@ -149,7 +149,7 @@ public class ComposingCollectionView: UICollectionView, ComposingContainer {
     ///   - unit: the unit to scroll to
     ///   - scrollPosition: the desired position of the unit
     ///   - animated: should this be animated
-    public func scroll(to unit: ComposingUnit, at scrollPosition: UICollectionViewScrollPosition, animated: Bool = true) {
+    public func scroll(to unit: ComposingUnit, at scrollPosition: UICollectionView.ScrollPosition, animated: Bool = true) {
         guard let indexPath = self.indexPath(for: unit) else { return }
         self.scrollToItem(at: indexPath, at: scrollPosition, animated: animated)
     }
